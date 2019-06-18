@@ -6,8 +6,8 @@ class Screen
 {
 public:
 
-	static const float WIDTH;
-	static const float HEIGHT;
+	static const unsigned int WIDTH;
+	static const unsigned int HEIGHT;
 
 	sf::RenderWindow* window;
 

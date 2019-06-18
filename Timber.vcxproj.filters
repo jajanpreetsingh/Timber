@@ -18,54 +18,54 @@
     <ClCompile Include="Timber.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Cloud.cpp">
+    <ClCompile Include="Screen\Screen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Bee.cpp">
+    <ClCompile Include="SpriteGameObject\SpriteGameObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SpriteGameObject.cpp">
+    <ClCompile Include="LoadedAssets\LoadedAssets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Utils.cpp">
+    <ClCompile Include="Utils\Utils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LoadedAssets.cpp">
+    <ClCompile Include="Bee\Bee.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Vec2D.cpp">
+    <ClCompile Include="Vec2D\Vec2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Screen.cpp">
+    <ClCompile Include="Word\Word.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Word.cpp">
+    <ClCompile Include="Cloud\Cloud.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Cloud.h">
+    <ClInclude Include="Headers\Bee.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Bee.h">
+    <ClInclude Include="Headers\Cloud.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SpriteGameObject.h">
+    <ClInclude Include="Headers\LoadedAssets.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Utils.h">
+    <ClInclude Include="Headers\Screen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="LoadedAssets.h">
+    <ClInclude Include="Headers\SpriteGameObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Vec2D.h">
+    <ClInclude Include="Headers\Utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Screen.h">
+    <ClInclude Include="Headers\Vec2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Word.h">
+    <ClInclude Include="Headers\Word.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

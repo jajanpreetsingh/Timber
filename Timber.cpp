@@ -1,12 +1,12 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include "Vec2D.h"
-#include "Cloud.h"
-#include "Bee.h"
-#include "Utils.h"
-#include "LoadedAssets.h"
-#include "Screen.h"
-#include "Word.h"
+#include "Headers/Vec2D.h"
+#include "Headers/Cloud.h"
+#include "Headers/Bee.h"
+#include "Headers/Utils.h"
+#include "Headers/LoadedAssets.h"
+#include "Headers/Screen.h"
+#include "Headers/Word.h"
 
 using namespace sf;
 
@@ -17,10 +17,10 @@ void InitText();
 
 bool paused = false;
 
-Screen* screen;
-SpriteGameObject* bg;
-Bee* bee;
-SpriteGameObject* tree;
+Screen* screen = NULL;
+SpriteGameObject* bg = NULL;
+Bee* bee = NULL;
+SpriteGameObject* tree = NULL;
 Cloud* c[3];
 Text* score = NULL;
 Font komika;

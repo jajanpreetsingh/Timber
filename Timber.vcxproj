@@ -75,6 +75,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <SourcePath>.\Vec2D\;.\SpriteGameObject\;.\Cloud\;.\LoadedAssets\;.\Utils\;.\Bee\;.\Screen\;$(SourcePath)</SourcePath>
+    <IncludePath>.\Headers\;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -109,7 +111,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>.\SFML\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\Headers\;.\SFML\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -163,25 +165,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Bee.cpp" />
-    <ClCompile Include="Cloud.cpp" />
-    <ClCompile Include="LoadedAssets.cpp" />
-    <ClCompile Include="Screen.cpp" />
-    <ClCompile Include="SpriteGameObject.cpp" />
-    <ClCompile Include="Word.cpp" />
+    <ClCompile Include="Bee\Bee.cpp" />
+    <ClCompile Include="Cloud\Cloud.cpp" />
+    <ClCompile Include="LoadedAssets\LoadedAssets.cpp" />
+    <ClCompile Include="Screen\Screen.cpp" />
+    <ClCompile Include="SpriteGameObject\SpriteGameObject.cpp" />
     <ClCompile Include="Timber.cpp" />
-    <ClCompile Include="Utils.cpp" />
-    <ClCompile Include="Vec2D.cpp" />
+    <ClCompile Include="Utils\Utils.cpp" />
+    <ClCompile Include="Vec2D\Vec2D.cpp" />
+    <ClCompile Include="Word\Word.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Bee.h" />
-    <ClInclude Include="Cloud.h" />
-    <ClInclude Include="LoadedAssets.h" />
-    <ClInclude Include="Screen.h" />
-    <ClInclude Include="SpriteGameObject.h" />
-    <ClInclude Include="Word.h" />
-    <ClInclude Include="Utils.h" />
-    <ClInclude Include="Vec2D.h" />
+    <ClInclude Include="Headers\Bee.h" />
+    <ClInclude Include="Headers\Cloud.h" />
+    <ClInclude Include="Headers\LoadedAssets.h" />
+    <ClInclude Include="Headers\Screen.h" />
+    <ClInclude Include="Headers\SpriteGameObject.h" />
+    <ClInclude Include="Headers\Utils.h" />
+    <ClInclude Include="Headers\Vec2D.h" />
+    <ClInclude Include="Headers\Word.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

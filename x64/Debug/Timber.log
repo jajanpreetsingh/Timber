@@ -1,20 +1,5 @@
-﻿  Bee.cpp
-D:\Projects\VCPP\Timber\Bee.cpp(20): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\Projects\VCPP\Timber\Bee.cpp(32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  Cloud.cpp
-c1xx : fatal error C1083: Cannot open source file: 'Cloud.cpp': No such file or directory
-  LoadedAssets.cpp
-c1xx : fatal error C1083: Cannot open source file: 'LoadedAssets.cpp': No such file or directory
-  Screen.cpp
-D:\Projects\VCPP\Timber\Screen.cpp(1): fatal error C1083: Cannot open include file: 'Screen.h': No such file or directory
+﻿  Screen.cpp
   SpriteGameObject.cpp
-D:\Projects\VCPP\Timber\SpriteGameObject.cpp(3): fatal error C1083: Cannot open include file: 'SpriteGameObject/SpriteGameObject.h': No such file or directory
   Word.cpp
-D:\Projects\VCPP\Timber\Word.cpp(1): fatal error C1083: Cannot open include file: 'Vec2D.h': No such file or directory
-  Timber.cpp
-D:\Projects\VCPP\Timber\Timber.cpp(3): fatal error C1083: Cannot open include file: 'Vec2D.h': No such file or directory
-  Utils.cpp
-c1xx : fatal error C1083: Cannot open source file: 'Utils.cpp': No such file or directory
-  Vec2D.cpp
-c1xx : fatal error C1083: Cannot open source file: 'Vec2D.cpp': No such file or directory
   Generating Code...
+  Timber.vcxproj -> C:\Users\Jajan\Documents\GitHub\Timber\x64\Debug\Timber.exe
