@@ -40,7 +40,7 @@ int main()
 
 	new LoadedAssets();
 
-	bg = new SpriteGameObject(LoadedAssets::GetTexture(TextureType::Background));
+	bg = new SpriteGameObject(LoadedAssets::GetTexture(TextureType::Background),Pivot::MidCenter);
 
 	Vec2D* b = bg->GetBounds();
 
@@ -49,14 +49,14 @@ int main()
 	bg->SetPos(screen->MidCenter());
 
 	// Make a tree sprite
-	tree = new SpriteGameObject(LoadedAssets::GetTexture(TextureType::Tree));
+	tree = new SpriteGameObject(LoadedAssets::GetTexture(TextureType::Tree), Pivot::MidCenter);
 	tree->SetPos(screen->MidCenter()->x, screen->MidCenter()->y);
 
-	bee = new Bee(LoadedAssets::GetTexture(TextureType::Bee));
+	bee = new Bee(LoadedAssets::GetTexture(TextureType::Bee), Pivot::MidCenter);
 
-	c[0] = new Cloud(LoadedAssets::GetTexture(TextureType::Cloud));
-	c[1] = new Cloud(LoadedAssets::GetTexture(TextureType::Cloud));
-	c[2] = new Cloud(LoadedAssets::GetTexture(TextureType::Cloud));
+	c[0] = new Cloud(LoadedAssets::GetTexture(TextureType::Cloud),Pivot::MidCenter);
+	c[1] = new Cloud(LoadedAssets::GetTexture(TextureType::Cloud),Pivot::MidCenter);
+	c[2] = new Cloud(LoadedAssets::GetTexture(TextureType::Cloud),Pivot::MidCenter);
 
 	InitText();
 
@@ -100,9 +100,9 @@ void InitText()
 
 	score = new Text("score : 0", komika, 40);
 
-	Vector2f tbound = Vector2f(score->getLocalBounds().width / 2, score->getLocalBounds().height / 2);
+	//Vector2f tbound = Vector2f(score->getLocalBounds().width / 2, score->getLocalBounds().height / 2);
 
-	score->setOrigin(tbound);
+	//score->setOrigin(tbound);
 
 	float lpad = 20;
 	float tpad = 20;

@@ -11,7 +11,7 @@ public:
 
 	Cloud(std::string filename);
 
-	Cloud(sf::Texture tex);
+	Cloud(sf::Texture tex, Pivot piv = Pivot::TopLeft);
 
 	void Update();
 

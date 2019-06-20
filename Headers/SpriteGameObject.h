@@ -1,4 +1,5 @@
 #include "Vec2D.h"
+#include "Pivot.h"
 
 #pragma once
 class SpriteGameObject
@@ -6,6 +7,8 @@ class SpriteGameObject
 private:
 
 	Vec2D* currentPos = NULL;
+
+	void SetOrigin(Pivot piv);
 
 public:
 
@@ -15,6 +18,10 @@ public:
 	sf::Texture Tex;
 	sf::Sprite* Sprite;
 
+	SpriteGameObject(std::string filename);
+
+	SpriteGameObject(sf::Texture tex, Pivot piv = Pivot::TopLeft);
+
 	void SetPos(float x, float y);
 
 	void SetPos(Vec2D* pos);
@@ -22,10 +29,6 @@ public:
 	void SetScale(float x, float y);
 
 	void SetSpeed(float x, float y);
-
-	SpriteGameObject(std::string filename);
-
-	SpriteGameObject(sf::Texture tex);
 
 	static sf::Texture GetTexture(std::string filename);
 

@@ -72,14 +72,16 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <SourcePath>.\Scripts\Utils\;.\Scripts\GameObjects\;.\Scripts\CommonStructures\;$(SourcePath)</SourcePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <SourcePath>.\Vec2D\;.\SpriteGameObject\;.\Cloud\;.\LoadedAssets\;.\Utils\;.\Bee\;.\Screen\;$(SourcePath)</SourcePath>
+    <SourcePath>.\Scripts\CommonStructures\;.\Scripts\GameObjects\;.\Scripts\Utils\;$(SourcePath)</SourcePath>
     <IncludePath>.\Headers\;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <SourcePath>.\Scripts\Utils\;.\Scripts\GameObjects\;.\Scripts\CommonStructures\;$(SourcePath)</SourcePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -93,12 +95,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>.\SFML\include\;.\Headers\;.\Cloud\;.\Screen\;.\LoadedAssets\;.\SpriteGameObject\;.\Bee\;.\Utils\;.\Word\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\SFML\include\;.\Headers\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>.\SFML\lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>.\ext\;.\SFML\lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-network-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -116,7 +118,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>.\SFML\lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>.\ext\;.\SFML\lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-network-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -131,7 +133,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>.\SFML\include\;.\Headers\;.\Cloud\;.\Screen\;.\LoadedAssets\;.\SpriteGameObject\;.\Bee\;.\Utils\;.\Word\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\SFML\include\;.\Headers\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -165,25 +167,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Bee\Bee.cpp" />
-    <ClCompile Include="Cloud\Cloud.cpp" />
-    <ClCompile Include="LoadedAssets\LoadedAssets.cpp" />
-    <ClCompile Include="Screen\Screen.cpp" />
-    <ClCompile Include="SpriteGameObject\SpriteGameObject.cpp" />
-    <ClCompile Include="Timber.cpp" />
-    <ClCompile Include="Utils\Utils.cpp" />
-    <ClCompile Include="Vec2D\Vec2D.cpp" />
-    <ClCompile Include="Word\Word.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="Headers\Bee.h" />
     <ClInclude Include="Headers\Cloud.h" />
+    <ClInclude Include="Headers\Constants.h" />
     <ClInclude Include="Headers\LoadedAssets.h" />
+    <ClInclude Include="Headers\Pivot.h" />
     <ClInclude Include="Headers\Screen.h" />
     <ClInclude Include="Headers\SpriteGameObject.h" />
     <ClInclude Include="Headers\Utils.h" />
     <ClInclude Include="Headers\Vec2D.h" />
     <ClInclude Include="Headers\Word.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Scripts\CommonStructures\Pivot.cpp" />
+    <ClCompile Include="Scripts\CommonStructures\Screen.cpp" />
+    <ClCompile Include="Scripts\CommonStructures\Vec2D.cpp" />
+    <ClCompile Include="Scripts\GameObjects\Bee.cpp" />
+    <ClCompile Include="Scripts\GameObjects\Cloud.cpp" />
+    <ClCompile Include="Scripts\GameObjects\SpriteGameObject.cpp" />
+    <ClCompile Include="Scripts\GameObjects\Word.cpp" />
+    <ClCompile Include="Scripts\Utils\Constants.cpp" />
+    <ClCompile Include="Scripts\Utils\LoadedAssets.cpp" />
+    <ClCompile Include="Scripts\Utils\Utils.cpp" />
+    <ClCompile Include="Timber.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
