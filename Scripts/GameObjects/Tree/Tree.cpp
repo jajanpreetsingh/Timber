@@ -6,17 +6,21 @@
 
 Tree::Tree(sf::Texture tex, sf::Texture branchTex, Pivot piv, int branchCount) : SpriteGameObject(tex, piv)
 {
-	float top = GetPos()->y - GetBounds()->y / 2;
+	SetScale(2, 2);
+	Vec2D* pos = Screen::MidCenter();
+	SetPos(pos);
 
-	std::cout << "top : " << top << "    height : " << GetBounds()->x << std::endl;
+	float ht = GetBounds()->y;
+	float top = pos->y - (ht / 2);
 
 	for (int i = 0; i < branchCount; i++)
 	{
-		Branch* br = new Branch(branchTex, i % 2 == 0 ? 1 : -1, Pivot::MidLeft);
+		int dir = i % 2 == 0 ? 1 : -1;
+		Branch* br = new Branch(branchTex, dir, Pivot::MidLeft);
 
 		br->tree = this;
 
-		br->SetPos(GetPos());
+		br->SetPos(pos->x + (dir * GetBounds()->x / 2), top + i * (ht / branchCount));
 
 		branches.push_back(*br);
 	}
