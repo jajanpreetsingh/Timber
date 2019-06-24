@@ -60,8 +60,8 @@ mono_crash.*
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
-x64/
-x86/
+x64/*
+x86/*
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
 bld/
@@ -381,3 +381,4 @@ healthchecksdb
 MigrationBackup/
 
 # End of https://www.gitignore.io/api/c++,visualstudio
+*.tlog
