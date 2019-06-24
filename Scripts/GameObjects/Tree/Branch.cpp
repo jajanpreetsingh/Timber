@@ -5,11 +5,6 @@
 
 Branch::Branch(sf::Texture tex, int dir, Pivot piv) : SpriteGameObject(tex, piv)
 {
-	if (dir < 0)
-	{
-		SetScale(-1, 1);
-		
-	}
 }
 
 void Branch::Update()

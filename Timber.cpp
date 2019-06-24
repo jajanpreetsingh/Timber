@@ -52,9 +52,12 @@ int main()
 	// Make a tree sprite
 	tree = new Tree(LoadedAssets::GetTexture(TextureType::Tree), 
 		LoadedAssets::GetTexture(TextureType::Branch), 
-		Pivot::MidCenter, 6);
+		Pivot::MidCenter, 0);
 
 	tree->SetPos(screen->MidCenter()->x, screen->MidCenter()->y);
+
+	tree->AddBranches(6);
+	tree->AddBranches(2);
 
 	bee = new Bee(LoadedAssets::GetTexture(TextureType::Bee), Pivot::MidCenter);
 

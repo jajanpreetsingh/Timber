@@ -20,12 +20,9 @@ void Bee::Update()
 	}
 	else
 	{
-		int nextHeight = Utils::GetRandom(0, 30);
-		int dir = Utils::GetRandom(20, 50);
+		int nextHeight = Utils::GetRandom(-2, 4);
 
-		nextHeight *= (dir == 0 ? 1 : -1);
-
-		SetSpeed(-10, nextHeight);
+		SetSpeed(-1, nextHeight);
 		Move();
 
 		if (GetPos()->x < 0)
