@@ -12,6 +12,7 @@ void LoadedAssets::Init()
 	LoadTexture(TextureType::Cloud, Constants::SpritePath + "cloud.png");
 	LoadTexture(TextureType::Tree, Constants::SpritePath + "tree.png");
 	LoadTexture(TextureType::Background, Constants::SpritePath + "background.png");
+	LoadTexture(TextureType::Branch, Constants::SpritePath + "branch.png");
 
 	LoadFont(FontType::Komika, Constants::FontPath + "KOMIKAP_.ttf");
 }

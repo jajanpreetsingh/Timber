@@ -9,7 +9,8 @@ enum class TextureType
 	Cloud,
 	Bee,
 	Tree,
-	Background
+	Background,
+	Branch
 };
 
 enum class FontType

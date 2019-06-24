@@ -4,10 +4,6 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 
-Bee::Bee(std::string filename) : SpriteGameObject(filename)
-{
-}
-
 Bee::Bee(sf::Texture tex, Pivot piv) : SpriteGameObject(tex, piv)
 {
 

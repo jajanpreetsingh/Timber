@@ -3,10 +3,6 @@
 #include "Screen.h"
 #include <SFML/Graphics.hpp>
 
-Cloud::Cloud(std::string filename) :SpriteGameObject(filename)
-{
-}
-
 Cloud::Cloud(sf::Texture tex, Pivot piv) : SpriteGameObject(tex, piv)
 {
 }

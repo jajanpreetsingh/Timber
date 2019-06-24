@@ -19,6 +19,9 @@
     <Filter Include="Source Files\GameObjects">
       <UniqueIdentifier>{88e492a4-5466-4c97-82ab-b8b804883464}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\GameObjects\Tree">
+      <UniqueIdentifier>{b71cc2aa-9214-4931-b52b-8217844ca91d}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files\Utils">
       <UniqueIdentifier>{21a85899-638a-4f78-a9ce-a31ecd9fa24c}</UniqueIdentifier>
     </Filter>
@@ -52,6 +55,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Headers\Constants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Branch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Tree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -88,6 +97,12 @@
     </ClCompile>
     <ClCompile Include="Scripts\Utils\Constants.cpp">
       <Filter>Source Files\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\GameObjects\Tree\Branch.cpp">
+      <Filter>Source Files\GameObjects\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\GameObjects\Tree\Tree.cpp">
+      <Filter>Source Files\GameObjects\Tree</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

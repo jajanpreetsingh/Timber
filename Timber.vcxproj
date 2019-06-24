@@ -168,12 +168,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Headers\Bee.h" />
+    <ClInclude Include="Headers\Branch.h" />
     <ClInclude Include="Headers\Cloud.h" />
     <ClInclude Include="Headers\Constants.h" />
     <ClInclude Include="Headers\LoadedAssets.h" />
     <ClInclude Include="Headers\Pivot.h" />
     <ClInclude Include="Headers\Screen.h" />
     <ClInclude Include="Headers\SpriteGameObject.h" />
+    <ClInclude Include="Headers\Tree.h" />
     <ClInclude Include="Headers\Utils.h" />
     <ClInclude Include="Headers\Vec2D.h" />
     <ClInclude Include="Headers\Word.h" />
@@ -185,6 +187,8 @@
     <ClCompile Include="Scripts\GameObjects\Bee.cpp" />
     <ClCompile Include="Scripts\GameObjects\Cloud.cpp" />
     <ClCompile Include="Scripts\GameObjects\SpriteGameObject.cpp" />
+    <ClCompile Include="Scripts\GameObjects\Tree\Branch.cpp" />
+    <ClCompile Include="Scripts\GameObjects\Tree\Tree.cpp" />
     <ClCompile Include="Scripts\GameObjects\Word.cpp" />
     <ClCompile Include="Scripts\Utils\Constants.cpp" />
     <ClCompile Include="Scripts\Utils\LoadedAssets.cpp" />

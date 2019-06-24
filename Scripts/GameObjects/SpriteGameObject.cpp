@@ -2,22 +2,6 @@
 #include <SFML/Graphics.hpp>
 #include "SpriteGameObject.h"
 
-SpriteGameObject::SpriteGameObject(std::string filename)
-{
-	currentPos = new Vec2D(0, 0);
-
-	Tex.loadFromFile(filename);
-	Sprite = new sf::Sprite(Tex);
-	IsActive = false;
-	Speed = new Vec2D(0, 0);
-
-	Sprite->setOrigin(GetBounds()->x / 2, GetBounds()->y / 2);
-
-	SetPos(0, 0);
-
-	Sprite->setOrigin(GetBounds()->x / 2, GetBounds()->y / 2);
-}
-
 SpriteGameObject::SpriteGameObject(sf::Texture tex, Pivot piv)
 {
 	currentPos = new Vec2D(0, 0);

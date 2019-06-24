@@ -18,8 +18,6 @@ public:
 	sf::Texture Tex;
 	sf::Sprite* Sprite;
 
-	SpriteGameObject(std::string filename);
-
 	SpriteGameObject(sf::Texture tex, Pivot piv = Pivot::TopLeft);
 
 	void SetPos(float x, float y);

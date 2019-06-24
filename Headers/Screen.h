@@ -15,23 +15,23 @@ public:
 
 	void Draw(sf::Sprite sprite);
 
-	Vec2D* TopLeft();
+	static Vec2D* TopLeft();
 
-	Vec2D* TopCenter();
+	static Vec2D* TopCenter();
 
-	Vec2D* TopRight();
+	static Vec2D* TopRight();
 
-	Vec2D* MidLeft();
+	static Vec2D* MidLeft();
 
-	Vec2D* MidCenter();
+	static Vec2D* MidCenter();
 
-	Vec2D* MidRight();
+	static Vec2D* MidRight();
 
-	Vec2D* BottomLeft();
+	static Vec2D* BottomLeft();
 
-	Vec2D* BottomCenter();
+	static Vec2D* BottomCenter();
 
-	Vec2D* BottomRight();
+	static Vec2D* BottomRight();
 
 	~Screen();
 };

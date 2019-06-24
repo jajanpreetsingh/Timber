@@ -9,8 +9,6 @@ class Cloud : public SpriteGameObject
 
 public:
 
-	Cloud(std::string filename);
-
 	Cloud(sf::Texture tex, Pivot piv = Pivot::TopLeft);
 
 	void Update();

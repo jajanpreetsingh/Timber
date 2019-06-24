@@ -1,12 +1,13 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include "Headers/Vec2D.h"
-#include "Headers/Cloud.h"
-#include "Headers/Bee.h"
-#include "Headers/Utils.h"
-#include "Headers/LoadedAssets.h"
-#include "Headers/Screen.h"
-#include "Headers/Word.h"
+#include "Vec2D.h"
+#include "Cloud.h"
+#include "Bee.h"
+#include "Utils.h"
+#include "Tree.h"
+#include "LoadedAssets.h"
+#include "Screen.h"
+#include "Word.h"
 
 using namespace sf;
 
@@ -20,7 +21,7 @@ bool paused = false;
 Screen* screen = NULL;
 SpriteGameObject* bg = NULL;
 Bee* bee = NULL;
-SpriteGameObject* tree = NULL;
+Tree* tree = NULL;
 Cloud* c[3];
 Text* score = NULL;
 Font komika;
@@ -40,7 +41,7 @@ int main()
 
 	new LoadedAssets();
 
-	bg = new SpriteGameObject(LoadedAssets::GetTexture(TextureType::Background),Pivot::MidCenter);
+	bg = new SpriteGameObject(LoadedAssets::GetTexture(TextureType::Background), Pivot::MidCenter);
 
 	Vec2D* b = bg->GetBounds();
 
@@ -49,14 +50,17 @@ int main()
 	bg->SetPos(screen->MidCenter());
 
 	// Make a tree sprite
-	tree = new SpriteGameObject(LoadedAssets::GetTexture(TextureType::Tree), Pivot::MidCenter);
+	tree = new Tree(LoadedAssets::GetTexture(TextureType::Tree), 
+		LoadedAssets::GetTexture(TextureType::Branch), 
+		Pivot::MidCenter, 6);
+
 	tree->SetPos(screen->MidCenter()->x, screen->MidCenter()->y);
 
 	bee = new Bee(LoadedAssets::GetTexture(TextureType::Bee), Pivot::MidCenter);
 
-	c[0] = new Cloud(LoadedAssets::GetTexture(TextureType::Cloud),Pivot::MidCenter);
-	c[1] = new Cloud(LoadedAssets::GetTexture(TextureType::Cloud),Pivot::MidCenter);
-	c[2] = new Cloud(LoadedAssets::GetTexture(TextureType::Cloud),Pivot::MidCenter);
+	c[0] = new Cloud(LoadedAssets::GetTexture(TextureType::Cloud), Pivot::MidCenter);
+	c[1] = new Cloud(LoadedAssets::GetTexture(TextureType::Cloud), Pivot::MidCenter);
+	c[2] = new Cloud(LoadedAssets::GetTexture(TextureType::Cloud), Pivot::MidCenter);
 
 	InitText();
 
