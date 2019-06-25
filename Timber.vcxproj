@@ -167,6 +167,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Headers\AnimatedSpriteObject.h" />
     <ClInclude Include="Headers\Bee.h" />
     <ClInclude Include="Headers\Branch.h" />
     <ClInclude Include="Headers\Cloud.h" />
@@ -184,6 +185,7 @@
     <ClCompile Include="Scripts\CommonStructures\Pivot.cpp" />
     <ClCompile Include="Scripts\CommonStructures\Screen.cpp" />
     <ClCompile Include="Scripts\CommonStructures\Vec2D.cpp" />
+    <ClCompile Include="Scripts\GameObjects\AnimatedSpriteObject.cpp" />
     <ClCompile Include="Scripts\GameObjects\Bee.cpp" />
     <ClCompile Include="Scripts\GameObjects\Cloud.cpp" />
     <ClCompile Include="Scripts\GameObjects\SpriteGameObject.cpp" />

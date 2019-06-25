@@ -75,10 +75,6 @@ int main()
 
 		if (!paused)
 			Update(clock);
-		else
-		{
-			continue;
-		}
 	}
 	return 0;
 }
@@ -95,7 +91,7 @@ void ProcessInput()
 		screen->window->close();
 	}
 
-	if (Keyboard::isKeyPressed(Keyboard::Enter))
+	if (Keyboard::isKeyPressed(Keyboard::P))
 	{
 		paused = !paused;
 	}

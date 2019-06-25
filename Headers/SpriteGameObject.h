@@ -38,6 +38,8 @@ public:
 
 	void Move();
 
+	bool IsOutOfScreen();
+
 	void Draw(sf::RenderWindow* win);
 
 	~SpriteGameObject();

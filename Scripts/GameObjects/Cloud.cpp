@@ -5,6 +5,9 @@
 
 Cloud::Cloud(sf::Texture tex, Pivot piv) : SpriteGameObject(tex, piv)
 {
+	IsActive = false;
+
+	SetScale(-1, 1);
 }
 
 void Cloud::Update()
@@ -15,14 +18,14 @@ void Cloud::Update()
 
 		float height = Utils::GetRandom(100, 400);
 
-		SetPos(0, height);
+		SetPos(-GetBounds()->x / 2, height);
 		IsActive = true;
 	}
 	else
 	{
 		Move();
 
-		if (GetPos()->x > Screen::WIDTH)
+		if (IsOutOfScreen())
 		{
 			IsActive = false;
 		}

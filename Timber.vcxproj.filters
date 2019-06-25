@@ -63,6 +63,9 @@
     <ClInclude Include="Headers\Tree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Headers\AnimatedSpriteObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Scripts\CommonStructures\Pivot.cpp">
@@ -103,6 +106,9 @@
     </ClCompile>
     <ClCompile Include="Scripts\GameObjects\Tree\Tree.cpp">
       <Filter>Source Files\GameObjects\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\GameObjects\AnimatedSpriteObject.cpp">
+      <Filter>Source Files\GameObjects</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

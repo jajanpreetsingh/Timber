@@ -1,6 +1,6 @@
-#include <iostream>
 #include <SFML/Graphics.hpp>
 #include "SpriteGameObject.h"
+#include "Screen.h"
 
 SpriteGameObject::SpriteGameObject(sf::Texture tex, Pivot piv)
 {
@@ -40,41 +40,41 @@ void SpriteGameObject::SetOrigin(Pivot piv)
 		break;
 
 	case Pivot::TopRight:
-		
+
 		Sprite->setOrigin(b->x, 0);
 		break;
 
 
 
 	case Pivot::MidLeft:
-		
+
 		Sprite->setOrigin(0, b->y / 2);
 		break;
 
 	case Pivot::MidCenter:
-		
+
 		Sprite->setOrigin(b->x / 2, b->y / 2);
 		break;
 
 	case Pivot::MidRight:
-		
+
 		Sprite->setOrigin(b->x, b->y / 2);
 		break;
 
 
 
 	case Pivot::BottomLeft:
-		
+
 		Sprite->setOrigin(0, b->y);
 		break;
 
 	case Pivot::BottomCenter:
-		
+
 		Sprite->setOrigin(b->x / 2, b->y);
 		break;
 
 	case Pivot::BottomRight:
-		
+
 		Sprite->setOrigin(b->x, b->y);
 		break;
 
@@ -130,6 +130,17 @@ void SpriteGameObject::Draw(sf::RenderWindow* win)
 void SpriteGameObject::Move()
 {
 	Sprite->move(Speed->x, Speed->y);
+
+	sf::Vector2f v = Sprite->getPosition();
+
+	currentPos = new Vec2D(v.x, v.y);
+}
+
+bool SpriteGameObject::IsOutOfScreen()
+{
+	sf::FloatRect fr = sf::FloatRect(0, 0, Screen::WIDTH, Screen::HEIGHT);
+
+	return !fr.intersects(Sprite->getGlobalBounds());
 }
 
 SpriteGameObject::~SpriteGameObject()

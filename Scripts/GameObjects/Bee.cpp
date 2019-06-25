@@ -1,12 +1,11 @@
 #include "Bee.h"
 #include "Utils.h"
 #include "Screen.h"
-#include <iostream>
 #include <SFML/Graphics.hpp>
 
 Bee::Bee(sf::Texture tex, Pivot piv) : SpriteGameObject(tex, piv)
 {
-
+	IsActive = false;
 }
 
 void Bee::Update()
@@ -20,12 +19,15 @@ void Bee::Update()
 	}
 	else
 	{
-		int nextHeight = Utils::GetRandom(-2, 4);
+		int nextXSpeed = Utils::GetRandom(-8, 4); // more tendency to go left
+		int nextYSpeed = Utils::GetRandom(-4, 8); // more tendency to come down
 
-		SetSpeed(-1, nextHeight);
+		SetScale(nextXSpeed <= 0 ? 1 : -1, 1); // face left/right acc to xspeed
+
+		SetSpeed(nextXSpeed, nextYSpeed);
 		Move();
 
-		if (GetPos()->x < 0)
+		if (IsOutOfScreen())
 		{
 			IsActive = false;
 		}
