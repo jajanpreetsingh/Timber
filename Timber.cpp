@@ -8,6 +8,7 @@
 #include "LoadedAssets.h"
 #include "Screen.h"
 #include "Word.h"
+#include "AnimatedSpriteObject.h"
 
 using namespace sf;
 
@@ -15,6 +16,7 @@ void Update(Clock clock);
 void ProcessInput();
 void SetupScreen();
 void InitText();
+void InitAnimatedBee();
 
 bool paused = false;
 
@@ -25,6 +27,8 @@ Tree* tree = NULL;
 Cloud* c[3];
 Text* score = NULL;
 Font komika;
+
+AnimatedSpriteObject* combee = NULL;
 
 SpriteGameObject* gameObjects[];
 
@@ -50,14 +54,16 @@ int main()
 	bg->SetPos(screen->MidCenter());
 
 	// Make a tree sprite
-	tree = new Tree(LoadedAssets::GetTexture(TextureType::Tree), 
-		LoadedAssets::GetTexture(TextureType::Branch), 
+	tree = new Tree(LoadedAssets::GetTexture(TextureType::Tree),
+		LoadedAssets::GetTexture(TextureType::Branch),
 		Pivot::MidCenter, 0);
 
 	tree->SetPos(screen->MidCenter()->x, screen->MidCenter()->y);
 
 	tree->AddBranches(6);
 	tree->AddBranches(2);
+
+	InitAnimatedBee();
 
 	bee = new Bee(LoadedAssets::GetTexture(TextureType::Bee), Pivot::MidCenter);
 
@@ -116,6 +122,21 @@ void InitText()
 	score->setPosition(xpos, ypos);
 }
 
+
+void InitAnimatedBee()
+{
+	std::vector<std::string> fileNames;
+
+	for (int i = 0; i < 30; i++)
+	{
+		std::string name = "bee/" + std::to_string(i) + "bee.png";
+		fileNames.push_back(name);
+	}
+
+	combee = new AnimatedSpriteObject(LoadedAssets::GetTextures(fileNames), Pivot::MidCenter);
+	combee->SetPos(Screen::MidCenter());
+}
+
 void Update(Clock clock)
 {
 	Time dt = clock.restart();
@@ -126,6 +147,8 @@ void Update(Clock clock)
 	{
 		c[i]->Update();
 	}
+
+	combee->Update();
 
 	screen->window->clear();
 
@@ -138,6 +161,8 @@ void Update(Clock clock)
 	tree->Draw(screen->window);
 
 	bee->Draw(screen->window);
+
+	combee->Draw(screen->window);
 
 	screen->window->draw(*(score));
 
