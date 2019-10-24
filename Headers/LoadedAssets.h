@@ -21,6 +21,7 @@ enum class FontType
 
 enum class SoundType
 {
+	Chop
 };
 
 class LoadedAssets

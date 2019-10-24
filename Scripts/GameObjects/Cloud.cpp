@@ -14,7 +14,7 @@ void Cloud::Update()
 {
 	if (!IsActive)
 	{
-		Speed = new Vec2D(Utils::GetRandom(3, 5), 0);
+		Speed = new Vec2D((float)Utils::GetRandom(1, 3) / 10.0f, 0);
 
 		float height = Utils::GetRandom(100, 400);
 

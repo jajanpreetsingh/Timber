@@ -1,8 +1,8 @@
 #include "Screen.h"
 #include <SFML/Graphics.hpp>
 
-const unsigned int Screen::WIDTH = 3200;
-const unsigned int Screen::HEIGHT = 1800;
+const unsigned int Screen::WIDTH = 2560;
+const unsigned int Screen::HEIGHT = 1440;
 
 Screen::Screen()
 {

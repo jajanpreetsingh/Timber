@@ -1,5 +1,3 @@
-﻿  AnimatedSpriteObject.cpp
-  Timber.cpp
-  Generating Code...
-C:\Users\Jajan\Documents\GitHub\Timber\Timber.cpp(44,12): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Timber.vcxproj -> C:\Users\Jajan\Documents\GitHub\Timber\x64\Debug\Timber.exe
+﻿  Timber.cpp
+C:\Users\jajan\Desktop\Timber\Timber.cpp(48,12): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Timber.vcxproj -> C:\Users\jajan\Desktop\Timber\x64\Debug\Timber.exe

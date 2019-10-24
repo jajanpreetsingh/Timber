@@ -36,6 +36,10 @@ std::map<TextureType, sf::Texture> LoadedAssets::Textures;
 
 std::map<FontType, sf::Font> LoadedAssets::Fonts;
 
+LoadedAssets* assets;
+
+std::map<SoundType, sf::SoundBuffer> LoadedAssets::Sounds;
+
 int main()
 {
 	// Create a video mode object
@@ -43,7 +47,7 @@ int main()
 
 	srand(time(0));
 
-	new LoadedAssets();
+	assets = new LoadedAssets();
 
 	bg = new SpriteGameObject(LoadedAssets::GetTexture(TextureType::Background), Pivot::MidCenter);
 
@@ -105,19 +109,21 @@ void ProcessInput()
 
 void InitText()
 {
-	komika.loadFromFile("fonts/KOMIKAP_.ttf");
+	komika.loadFromFile("Resources/fonts/KOMIKAP_.ttf");
+
+	sf::Font f = LoadedAssets::GetFont(FontType::Komika);
 
 	score = new Text("score : 0", komika, 40);
 
-	//Vector2f tbound = Vector2f(score->getLocalBounds().width / 2, score->getLocalBounds().height / 2);
+	Vector2f tbound = Vector2f(0, score->getLocalBounds().height);
 
-	//score->setOrigin(tbound);
+	score->setOrigin(tbound);
 
 	float lpad = 20;
 	float tpad = 20;
 
 	float xpos = screen->TopLeft()->x + lpad;
-	float ypos = screen->TopLeft()->y + tpad;
+	float ypos = screen->TopLeft()->y + score->getLocalBounds().height + tpad;
 
 	score->setPosition(xpos, ypos);
 }
@@ -132,6 +138,11 @@ void InitAnimatedBee()
 		std::string name = "bee/" + std::to_string(i) + "bee.png";
 		fileNames.push_back(name);
 	}
+
+	Sound s;
+	s.setBuffer(LoadedAssets::GetSoundBuffer(SoundType::Chop));
+
+	s.play();
 
 	combee = new AnimatedSpriteObject(LoadedAssets::GetTextures(fileNames), Pivot::MidCenter);
 	combee->SetPos(Screen::MidCenter());
@@ -150,13 +161,16 @@ void Update(Clock clock)
 
 	combee->Update();
 
+	combee->ChangeAnimationSpeed(3);
+
 	screen->window->clear();
 
 	bg->Draw(screen->window);
 
-	c[0]->Draw(screen->window);
-	c[1]->Draw(screen->window);
-	c[2]->Draw(screen->window);
+	for (int i = 0; i < 3; i++)
+	{
+		c[i]->Draw(screen->window);
+	}
 
 	tree->Draw(screen->window);
 

@@ -18,6 +18,10 @@ private:
 
 	std::vector<sf::Texture> currentStateSprites;
 
+	float spriteChangedTimeElapsed;
+
+	sf::Clock clock;
+
 public:
 
 	AnimatedSpriteObject(std::vector<sf::Texture> texArray, Pivot piv = Pivot::TopLeft);
@@ -27,6 +31,8 @@ public:
 	void ChangeState(std::string stateName);
 
 	void AddAnimationState(std::string stateName, std::vector<sf::Texture> sprites);
+
+	void ChangeAnimationSpeed(float newScale);
 
 	~AnimatedSpriteObject();
 };

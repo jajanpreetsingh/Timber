@@ -9,16 +9,26 @@ AnimatedSpriteObject::AnimatedSpriteObject(std::vector<sf::Texture> texArray, Pi
 	currentSpriteIndex = 0;
 
 	currentStateSprites = texArray;
+
+	animationScale = 20;
+
+	clock.restart();
 }
 
 void AnimatedSpriteObject::Update()
 {
+	if (spriteChangedTimeElapsed >= (1 / animationScale))
+	{
+		++currentSpriteIndex;
+		spriteChangedTimeElapsed = 0;
+	}
+
 	if (currentSpriteIndex >= currentStateSprites.size())
 		currentSpriteIndex = 0;
 
 	Sprite->setTexture(currentStateSprites[currentSpriteIndex]);
 
-	++currentSpriteIndex;
+	spriteChangedTimeElapsed += clock.restart().asSeconds();
 }
 
 void AnimatedSpriteObject::ChangeState(std::string stateName)
@@ -37,6 +47,11 @@ void AnimatedSpriteObject::AddAnimationState(std::string stateName, std::vector<
 
 	animationStates.push_back(stateName);
 	stateSprites[stateName] = sprites;
+}
+
+void AnimatedSpriteObject::ChangeAnimationSpeed(float newScale)
+{
+	animationScale = newScale;
 }
 
 AnimatedSpriteObject::~AnimatedSpriteObject()

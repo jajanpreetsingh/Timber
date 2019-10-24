@@ -18,7 +18,6 @@ int Utils::GetRandom(int min, int max)
 	return min + (rand() % (max - min));
 }
 
-
 Utils::~Utils()
 {
 }

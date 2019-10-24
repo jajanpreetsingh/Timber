@@ -15,14 +15,17 @@ void LoadedAssets::Init()
 	LoadTexture(TextureType::Branch, "branch.png");
 
 	LoadFont(FontType::Komika, "KOMIKAP_.ttf");
+
+	LoadSound(SoundType::Chop, "chop.wav");
 }
 
 void LoadedAssets::LoadFont(FontType key, std::string filename)
 {
 	sf::Font f;
-	f.loadFromFile(Constants::FontPath + filename);
-
-	Fonts[key] = f;
+	if (f.loadFromFile(Constants::FontPath + filename))
+	{
+		Fonts[key] = f;
+	}
 }
 
 void LoadedAssets::LoadTexture(TextureType key, std::string filename)
