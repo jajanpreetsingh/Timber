@@ -109,9 +109,7 @@ void ProcessInput()
 
 void InitText()
 {
-	komika.loadFromFile("Resources/fonts/KOMIKAP_.ttf");
-
-	sf::Font f = LoadedAssets::GetFont(FontType::Komika);
+	komika = LoadedAssets::GetFont(FontType::Komika);
 
 	score = new Text("score : 0", komika, 40);
 
