@@ -180,8 +180,10 @@
     <ClInclude Include="Headers\Utils.h" />
     <ClInclude Include="Headers\Vec2D.h" />
     <ClInclude Include="Headers\Word.h" />
+    <ClInclude Include="Scene.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Scripts\CommonStructures\Pivot.cpp" />
     <ClCompile Include="Scripts\CommonStructures\Screen.cpp" />
     <ClCompile Include="Scripts\CommonStructures\Vec2D.cpp" />

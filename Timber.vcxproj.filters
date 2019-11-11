@@ -66,6 +66,9 @@
     <ClInclude Include="Headers\AnimatedSpriteObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Scripts\CommonStructures\Pivot.cpp">
@@ -109,6 +112,9 @@
     </ClCompile>
     <ClCompile Include="Scripts\GameObjects\AnimatedSpriteObject.cpp">
       <Filter>Source Files\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
