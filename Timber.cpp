@@ -144,6 +144,7 @@ void InitAnimatedBee()
 
 	combee = new AnimatedSpriteObject(LoadedAssets::GetTextures(fileNames), Pivot::MidCenter);
 	combee->SetPos(Screen::MidCenter());
+	combee->ChangeAnimationSpeed(30);
 }
 
 void Update(Clock clock)
@@ -158,9 +159,7 @@ void Update(Clock clock)
 	}
 
 	combee->Update();
-
-	combee->ChangeAnimationSpeed(3);
-
+	
 	screen->window->clear();
 
 	bg->Draw(screen->window);
