@@ -8,6 +8,7 @@
 enum class TextureType
 {
 	Cloud,
+	Cloud2,
 	Bee,
 	Tree,
 	Background,

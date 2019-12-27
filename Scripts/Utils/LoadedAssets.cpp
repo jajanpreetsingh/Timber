@@ -10,6 +10,7 @@ void LoadedAssets::Init()
 {
 	LoadTexture(TextureType::Bee, "bee.png");
 	LoadTexture(TextureType::Cloud, "cloud.png");
+	LoadTexture(TextureType::Cloud2, "cloud2.png");
 	LoadTexture(TextureType::Tree, "tree.png");
 	LoadTexture(TextureType::Background, "background.png");
 	LoadTexture(TextureType::Branch, "branch.png");

@@ -172,6 +172,7 @@
     <ClInclude Include="Headers\Branch.h" />
     <ClInclude Include="Headers\Cloud.h" />
     <ClInclude Include="Headers\Constants.h" />
+    <ClInclude Include="Headers\Level.h" />
     <ClInclude Include="Headers\LoadedAssets.h" />
     <ClInclude Include="Headers\Pivot.h" />
     <ClInclude Include="Headers\Screen.h" />
@@ -180,6 +181,7 @@
     <ClInclude Include="Headers\Utils.h" />
     <ClInclude Include="Headers\Vec2D.h" />
     <ClInclude Include="Headers\Word.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Scene.h" />
   </ItemGroup>
   <ItemGroup>
@@ -194,10 +196,14 @@
     <ClCompile Include="Scripts\GameObjects\Tree\Branch.cpp" />
     <ClCompile Include="Scripts\GameObjects\Tree\Tree.cpp" />
     <ClCompile Include="Scripts\GameObjects\Word.cpp" />
+    <ClCompile Include="Scripts\Level.cpp" />
     <ClCompile Include="Scripts\Utils\Constants.cpp" />
     <ClCompile Include="Scripts\Utils\LoadedAssets.cpp" />
     <ClCompile Include="Scripts\Utils\Utils.cpp" />
     <ClCompile Include="Timber.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Timber.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

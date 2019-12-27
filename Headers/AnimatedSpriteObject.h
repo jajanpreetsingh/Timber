@@ -16,6 +16,8 @@ private:
 
 	int currentSpriteIndex;
 
+	int direction;
+
 	std::vector<sf::Texture> currentStateSprites;
 
 	float spriteChangedTimeElapsed;
@@ -33,6 +35,8 @@ public:
 	void AddAnimationState(std::string stateName, std::vector<sf::Texture> sprites);
 
 	void ChangeAnimationSpeed(float newScale);
+
+	void Reverse();
 
 	~AnimatedSpriteObject();
 };

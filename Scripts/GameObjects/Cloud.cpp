@@ -7,6 +7,8 @@ Cloud::Cloud(sf::Texture tex, Pivot piv) : SpriteGameObject(tex, piv)
 {
 	IsActive = false;
 
+	Sprite->setColor(sf::Color(255, 255, 255, 128));
+
 	SetScale(-1, 1);
 }
 
@@ -14,7 +16,7 @@ void Cloud::Update()
 {
 	if (!IsActive)
 	{
-		Speed = new Vec2D((float)Utils::GetRandom(1, 3) / 10.0f, 0);
+		Speed = new Vec2D((float)Utils::GetRandom(1, 9) / 10.0f, 0);
 
 		float height = Utils::GetRandom(100, 400);
 

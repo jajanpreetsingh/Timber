@@ -2,6 +2,8 @@
 
 AnimatedSpriteObject::AnimatedSpriteObject(std::vector<sf::Texture> texArray, Pivot piv) : SpriteGameObject(texArray[0], piv)
 {
+	direction = 1;
+
 	animationStates.push_back("default");
 
 	stateSprites["default"] = texArray;
@@ -19,12 +21,16 @@ void AnimatedSpriteObject::Update()
 {
 	if (spriteChangedTimeElapsed >= (1 / animationScale))
 	{
-		++currentSpriteIndex;
+		currentSpriteIndex += direction;
 		spriteChangedTimeElapsed = 0;
 	}
 
-	if (currentSpriteIndex >= currentStateSprites.size())
-		currentSpriteIndex = 0;
+	if (currentSpriteIndex >= currentStateSprites.size() || currentSpriteIndex <= -1)
+	{
+		Reverse();
+		currentSpriteIndex += direction;
+		spriteChangedTimeElapsed = 0;
+	}
 
 	Sprite->setTexture(currentStateSprites[currentSpriteIndex]);
 
@@ -52,6 +58,11 @@ void AnimatedSpriteObject::AddAnimationState(std::string stateName, std::vector<
 void AnimatedSpriteObject::ChangeAnimationSpeed(float newScale)
 {
 	animationScale = newScale;
+}
+
+void AnimatedSpriteObject::Reverse()
+{
+	direction *= -1;
 }
 
 AnimatedSpriteObject::~AnimatedSpriteObject()

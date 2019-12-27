@@ -24,7 +24,7 @@ Screen* screen = NULL;
 SpriteGameObject* bg = NULL;
 Bee* bee = NULL;
 Tree* tree = NULL;
-Cloud* c[3];
+Cloud** c;
 Text* score = NULL;
 Font komika;
 
@@ -71,9 +71,13 @@ int main()
 
 	bee = new Bee(LoadedAssets::GetTexture(TextureType::Bee), Pivot::MidCenter);
 
-	c[0] = new Cloud(LoadedAssets::GetTexture(TextureType::Cloud), Pivot::MidCenter);
-	c[1] = new Cloud(LoadedAssets::GetTexture(TextureType::Cloud), Pivot::MidCenter);
-	c[2] = new Cloud(LoadedAssets::GetTexture(TextureType::Cloud), Pivot::MidCenter);
+	int size = 8;
+	c = new Cloud*[size];
+
+	for (int i = 0; i < size; i++)
+	{
+		c[i] = new Cloud(LoadedAssets::GetTexture(TextureType::Cloud2), Pivot::MidCenter);
+	}
 
 	InitText();
 
@@ -83,8 +87,12 @@ int main()
 	{
 		ProcessInput();
 
-		if (!paused)
-			Update(clock);
+		if (paused)
+		{
+			continue;
+		}
+		
+		Update(clock);
 	}
 	return 0;
 }
@@ -99,9 +107,10 @@ void ProcessInput()
 	if (Keyboard::isKeyPressed(Keyboard::Escape))
 	{
 		screen->window->close();
+		exit(0);
 	}
 
-	if (Keyboard::isKeyPressed(Keyboard::P))
+	if (Keyboard::isKeyPressed(Keyboard::Space))
 	{
 		paused = !paused;
 	}
