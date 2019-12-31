@@ -1,5 +1,6 @@
-#include "Level.h"
+#pragma once
 
+#include "Level.h"
 
 Level::Level(sf::Window* win, sf::FloatRect& rect) : sf::View(rect)
 {

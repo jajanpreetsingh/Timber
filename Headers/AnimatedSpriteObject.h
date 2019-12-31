@@ -1,9 +1,10 @@
+#pragma once
+
 #include "SpriteGameObject.h"
 #include <vector>
 #include <string>
 #include <map>
 
-#pragma once
 class AnimatedSpriteObject : public SpriteGameObject
 {
 private:

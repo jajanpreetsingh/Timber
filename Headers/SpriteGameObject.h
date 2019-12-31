@@ -1,10 +1,16 @@
+#pragma once
+
 #include "Vec2D.h"
 #include "Pivot.h"
+#include "Level.h"
 
-#pragma once
+class Level;
+
 class SpriteGameObject
 {
 private:
+
+	Level* parentView;
 
 	Vec2D* currentPos = NULL;
 
@@ -25,6 +31,8 @@ public:
 	void SetPos(Vec2D* pos);
 
 	void SetScale(float x, float y);
+
+	void SetParentView(Level* view);
 
 	void SetSpeed(float x, float y);
 

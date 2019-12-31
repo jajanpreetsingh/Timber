@@ -1,2 +1,26 @@
 ﻿  AnimatedSpriteObject.cpp
+  Bee.cpp
+C:\Users\jajan\Documents\GitHub\Timber\Scripts\GameObjects\Bee.cpp(15,16): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\jajan\Documents\GitHub\Timber\Scripts\GameObjects\Bee.cpp(17,18): warning C4244: 'argument': conversion from 'const unsigned int' to 'float', possible loss of data
+  Cloud.cpp
+C:\Users\jajan\Documents\GitHub\Timber\Scripts\GameObjects\Bee.cpp(28,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  SpriteGameObject.cpp
+C:\Users\jajan\Documents\GitHub\Timber\Scripts\GameObjects\Cloud.cpp(21,16): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\jajan\Documents\GitHub\Timber\Scripts\GameObjects\SpriteGameObject.cpp(152,64): warning C4244: 'argument': conversion from 'const unsigned int' to 'T', possible loss of data
+C:\Users\jajan\Documents\GitHub\Timber\Scripts\GameObjects\SpriteGameObject.cpp(152,64): warning C4244:         with
+C:\Users\jajan\Documents\GitHub\Timber\Scripts\GameObjects\SpriteGameObject.cpp(152,64): warning C4244:         [
+C:\Users\jajan\Documents\GitHub\Timber\Scripts\GameObjects\SpriteGameObject.cpp(152,64): warning C4244:             T=float
+C:\Users\jajan\Documents\GitHub\Timber\Scripts\GameObjects\SpriteGameObject.cpp(152,64): warning C4244:         ]
+  Branch.cpp
+  Tree.cpp
+C:\Users\jajan\Documents\GitHub\Timber\Scripts\GameObjects\SpriteGameObject.cpp(152,49): warning C4244: 'argument': conversion from 'const unsigned int' to 'T', possible loss of data
+C:\Users\jajan\Documents\GitHub\Timber\Scripts\GameObjects\SpriteGameObject.cpp(152,49): warning C4244:         with
+C:\Users\jajan\Documents\GitHub\Timber\Scripts\GameObjects\SpriteGameObject.cpp(152,49): warning C4244:         [
+C:\Users\jajan\Documents\GitHub\Timber\Scripts\GameObjects\SpriteGameObject.cpp(152,49): warning C4244:             T=float
+C:\Users\jajan\Documents\GitHub\Timber\Scripts\GameObjects\SpriteGameObject.cpp(152,49): warning C4244:         ]
+  Level.cpp
+  Timber.cpp
+C:\Users\jajan\Documents\GitHub\Timber\Scripts\GameObjects\Tree\Tree.cpp(49,24): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
+C:\Users\jajan\Documents\GitHub\Timber\Timber.cpp(50,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Timber.vcxproj -> C:\Users\jajan\Documents\GitHub\Timber\x64\Debug\Timber.exe

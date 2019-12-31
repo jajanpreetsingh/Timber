@@ -1,5 +1,7 @@
-#include <SFML/Graphics.hpp>
+#pragma once
+
 #include "SpriteGameObject.h"
+#include <SFML/Graphics.hpp>
 #include "Screen.h"
 
 SpriteGameObject::SpriteGameObject(sf::Texture tex, Pivot piv)
@@ -124,7 +126,16 @@ void SpriteGameObject::Update()
 
 void SpriteGameObject::Draw(sf::RenderWindow* win)
 {
+	sf::View* v = parentView;
+
+	win->setView(*v);
+
 	win->draw(*Sprite);
+}
+
+void SpriteGameObject::SetParentView(Level* view)
+{
+	parentView = view;
 }
 
 void SpriteGameObject::Move()

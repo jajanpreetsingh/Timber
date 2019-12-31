@@ -1,9 +1,11 @@
-#include <SFML/Graphics.hpp>
-#include <SpriteGameObject.h>
-
 #pragma once
 
-class Level : sf::View
+#include <SFML/Graphics.hpp>
+#include "SpriteGameObject.h"
+
+class SpriteGameObject;
+
+class Level : public sf::View
 {
 private:
 	sf::Window* window;
