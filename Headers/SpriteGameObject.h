@@ -2,15 +2,15 @@
 
 #include "Vec2D.h"
 #include "Pivot.h"
-#include "Level.h"
+#include "BaseView.h"
 
-class Level;
+class BaseView;
 
 class SpriteGameObject
 {
 private:
 
-	Level* parentView;
+	BaseView* parentView;
 
 	Vec2D* currentPos = NULL;
 
@@ -32,7 +32,9 @@ public:
 
 	void SetScale(float x, float y);
 
-	void SetParentView(Level* view);
+	void SetParentView(BaseView* view);
+
+	BaseView* GetParentView();
 
 	void SetSpeed(float x, float y);
 
@@ -42,9 +44,9 @@ public:
 
 	Vec2D* GetBounds();
 
-	void Update();
+	virtual void Update();
 
-	void Move();
+	virtual void Move();
 
 	bool IsOutOfScreen();
 

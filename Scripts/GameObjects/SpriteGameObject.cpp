@@ -126,16 +126,22 @@ void SpriteGameObject::Update()
 
 void SpriteGameObject::Draw(sf::RenderWindow* win)
 {
-	sf::View* v = parentView;
-
-	win->setView(*v);
+	if (parentView != nullptr)
+	{
+		win->setView(*parentView);
+	}
 
 	win->draw(*Sprite);
 }
 
-void SpriteGameObject::SetParentView(Level* view)
+void SpriteGameObject::SetParentView(BaseView* view)
 {
 	parentView = view;
+}
+
+BaseView* SpriteGameObject::GetParentView()
+{
+	return parentView;
 }
 
 void SpriteGameObject::Move()

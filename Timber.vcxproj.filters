@@ -25,6 +25,9 @@
     <Filter Include="Source Files\Utils">
       <UniqueIdentifier>{21a85899-638a-4f78-a9ce-a31ecd9fa24c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Levels">
+      <UniqueIdentifier>{24a669d2-1365-4815-99b4-f33eef44653c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\Bee.h">
@@ -69,10 +72,13 @@
     <ClInclude Include="Scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Headers\Level.h">
+    <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
+    <ClInclude Include="Headers\JungleView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\BaseView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -122,7 +128,10 @@
     <ClCompile Include="Scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Scripts\Level.cpp">
+    <ClCompile Include="JungleView.cpp">
+      <Filter>Source Files\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\BaseView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

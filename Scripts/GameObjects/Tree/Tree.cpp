@@ -7,18 +7,6 @@
 Tree::Tree(sf::Texture tex, sf::Texture branchTex, Pivot piv, int branchCount) : SpriteGameObject(tex, piv)
 {
 	this->branchTex = branchTex;
-
-	/*for (int i = 0; i < branchCount; i++)
-	{
-		int dir = i % 2 == 0 ? 1 : -1;
-		Branch* br = new Branch(branchTex, dir, Pivot::MidLeft);
-
-		br->tree = this;
-
-		br->SetPos(pos->x + (dir * GetBounds()->x / 2), top + i * (ht / branchCount));
-
-		branches.push_back(*br);
-	}*/
 }
 
 void Tree::Update()
@@ -36,6 +24,8 @@ void Tree::AddBranches(int numberOfBranches)
 	{
 		int dir = i % 2 == 0 ? 1 : -1;
 		Branch* br = new Branch(branchTex, dir, Pivot::MidLeft);
+
+		br->SetParentView(GetParentView());
 
 		br->tree = this;
 
