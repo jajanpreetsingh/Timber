@@ -45,19 +45,19 @@ void LoadedAssets::LoadSound(SoundType key, std::string filename)
 	Sounds[key] = s;
 }
 
-sf::Texture LoadedAssets::GetTexture(TextureType key)
+sf::Texture* LoadedAssets::GetTexture(TextureType key)
 {
-	return Textures[key];
+	return &Textures[key];
 }
 
-sf::Font LoadedAssets::GetFont(FontType key)
+sf::Font* LoadedAssets::GetFont(FontType key)
 {
-	return Fonts[key];
+	return &Fonts[key];
 }
 
-sf::SoundBuffer LoadedAssets::GetSoundBuffer(SoundType key)
+sf::SoundBuffer* LoadedAssets::GetSoundBuffer(SoundType key)
 {
-	return Sounds[key];
+	return &Sounds[key];
 }
 
 std::vector<sf::Texture> LoadedAssets::GetTextures(std::vector < std::string> fileNames, std::string customePathAppend)

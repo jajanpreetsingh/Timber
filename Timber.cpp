@@ -25,7 +25,6 @@ std::map<SoundType, sf::SoundBuffer> LoadedAssets::Sounds;
 LoadedAssets* assets;
 
 JungleView* level;
-BaseView* level2;
 
 int main()
 {

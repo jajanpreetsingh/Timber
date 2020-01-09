@@ -28,6 +28,9 @@
     <Filter Include="Source Files\Levels">
       <UniqueIdentifier>{24a669d2-1365-4815-99b4-f33eef44653c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Interfaces">
+      <UniqueIdentifier>{764377d8-43db-4f24-98ea-16d7e3e3ae91}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\Bee.h">

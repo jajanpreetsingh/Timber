@@ -32,7 +32,7 @@ void AnimatedSpriteObject::Update()
 		spriteChangedTimeElapsed = 0;
 	}
 
-	Sprite->setTexture(currentStateSprites[currentSpriteIndex]);
+	setTexture(currentStateSprites[currentSpriteIndex]);
 
 	spriteChangedTimeElapsed += clock.restart().asSeconds();
 }

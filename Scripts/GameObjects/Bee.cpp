@@ -3,7 +3,7 @@
 #include "Screen.h"
 #include <SFML/Graphics.hpp>
 
-Bee::Bee(sf::Texture tex, Pivot piv) : SpriteGameObject(tex, piv)
+Bee::Bee(sf::Texture& tex, Pivot piv) : SpriteGameObject(tex, piv)
 {
 	IsActive = false;
 }

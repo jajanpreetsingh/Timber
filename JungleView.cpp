@@ -5,79 +5,75 @@
 
 JungleView::JungleView(sf::RenderWindow* win, sf::FloatRect* rect) : BaseView(win, rect)
 {
-	bg = Instantiate(new SpriteGameObject(LoadedAssets::GetTexture(TextureType::Background), Pivot::MidCenter));
-
-	Vec2D* b = bg->GetBounds();
-
-	bg->SetScale(Screen::WIDTH / b->x, Screen::HEIGHT / b->y);
-
-	bg->SetPos(Screen::MidCenter());
-
-	// Make a tree sprite
-	tree = new Tree(LoadedAssets::GetTexture(TextureType::Tree),
-		LoadedAssets::GetTexture(TextureType::Branch),
-		Pivot::MidCenter, 0);
-
-	tree->SetPos(Screen::MidCenter()->x, Screen::MidCenter()->y);
-
-	tree->AddBranches(6);
-	tree->AddBranches(2);
+	InitBackground();
 
 	InitAnimatedBee();
 
-	bee = new Bee(LoadedAssets::GetTexture(TextureType::Bee), Pivot::MidCenter);
+	InitSmallBee();
 
-	int size = 8;
-	c = new Cloud * [size];
-
-	for (int i = 0; i < size; i++)
-	{
-		c[i] = new Cloud(LoadedAssets::GetTexture(TextureType::Cloud2), Pivot::MidCenter);
-	}
+	InitClouds();
 
 	InitText();
 }
 
 void JungleView::Update(Clock clock)
 {
-	Time dt = clock.restart();
+	BaseView::Update(clock);
 
-	//setRotation(dt.asSeconds() * 360);
-
-	bee->Update();
-
-	for (int i = 0; i < 3; i++)
-	{
-		c[i]->Update();
-	}
-
-	combee->Update();
+	//setRotation(clock.restart().asSeconds() * 360);
 
 	window->clear();
 
-	bg->Draw(window);
-
-	for (int i = 0; i < 3; i++)
-	{
-		c[i]->Draw(window);
-	}
-
-	tree->Draw(window);
-
-	bee->Draw(window);
-
-	combee->Draw(window);
-
-	window->draw(*(score));
+	Draw();
 
 	window->display();
 }
 
+void JungleView::InitBackground()
+{
+	bg = Instantiate(new SpriteGameObject(*LoadedAssets::GetTexture(TextureType::Background), Pivot::MidCenter));
+
+	Vec2D* b = bg->GetBounds();
+
+	bg->SetScale(Screen::WIDTH / b->x, Screen::HEIGHT / b->y);
+
+	bg->SetPos(Screen::MidCenter());
+}
+
+void JungleView::InitTree()
+{
+	tree = static_cast<Tree*>(Instantiate(new Tree(*LoadedAssets::GetTexture(TextureType::Tree),
+		*LoadedAssets::GetTexture(TextureType::Branch),
+		Pivot::MidCenter, 0)));
+
+	tree->SetPos(Screen::MidCenter()->x, Screen::MidCenter()->y);
+
+	tree->AddBranches(4);
+}
+
+void JungleView::InitClouds()
+{
+	int size = 8;
+	c = new Cloud * [size];
+
+	for (int i = 0; i < size; i++)
+	{
+		c[i] = static_cast<Cloud*>(Instantiate(new Cloud(*LoadedAssets::GetTexture(TextureType::Cloud2), Pivot::MidCenter)));
+	}
+}
+
+void JungleView::InitSmallBee()
+{
+	bee = static_cast<Bee*>(Instantiate(new Bee(*LoadedAssets::GetTexture(TextureType::Bee), Pivot::MidCenter)));
+}
+
 void JungleView::InitText()
 {
-	komika = LoadedAssets::GetFont(FontType::Komika);
+	komika = *LoadedAssets::GetFont(FontType::Komika);
 
 	score = new Text("score : 0", komika, 40);
+
+	drawableObjects.push_back(score);
 
 	Vector2f tbound = Vector2f(0, score->getLocalBounds().height);
 
@@ -103,11 +99,11 @@ void JungleView::InitAnimatedBee()
 	}
 
 	Sound s;
-	s.setBuffer(LoadedAssets::GetSoundBuffer(SoundType::Chop));
+	s.setBuffer(*LoadedAssets::GetSoundBuffer(SoundType::Chop));
 
 	s.play();
 
-	combee = new AnimatedSpriteObject(LoadedAssets::GetTextures(fileNames), Pivot::MidCenter);
+	combee = static_cast<AnimatedSpriteObject*>(Instantiate(new AnimatedSpriteObject(LoadedAssets::GetTextures(fileNames), Pivot::MidCenter)));
 	combee->SetPos(Screen::MidCenter());
 	combee->ChangeAnimationSpeed(30);
 }

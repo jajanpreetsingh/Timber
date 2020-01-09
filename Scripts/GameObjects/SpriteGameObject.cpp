@@ -4,27 +4,18 @@
 #include <SFML/Graphics.hpp>
 #include "Screen.h"
 
-SpriteGameObject::SpriteGameObject(sf::Texture tex, Pivot piv)
+SpriteGameObject::SpriteGameObject(sf::Texture& tex, Pivot piv) : Sprite(tex)
 {
 	currentPos = new Vec2D(0, 0);
 
 	Tex = tex;
-	Sprite = new sf::Sprite(Tex);
+	//Sprite = new sf::Sprite(Tex);
 	IsActive = false;
 	Speed = new Vec2D(0, 0);
 
 	SetPos(0, 0);
 
 	SetOrigin(piv);
-}
-
-sf::Texture SpriteGameObject::GetTexture(std::string filename)
-{
-	sf::Texture t;
-
-	t.loadFromFile(filename);
-
-	return t;
 }
 
 void SpriteGameObject::SetOrigin(Pivot piv)
@@ -34,54 +25,54 @@ void SpriteGameObject::SetOrigin(Pivot piv)
 	switch (piv)
 	{
 	case Pivot::TopLeft:
-		Sprite->setOrigin(0, 0);
+		setOrigin(0, 0);
 		break;
 
 	case Pivot::TopCenter:
-		Sprite->setOrigin(b->x / 2, 0);
+		setOrigin(b->x / 2, 0);
 		break;
 
 	case Pivot::TopRight:
 
-		Sprite->setOrigin(b->x, 0);
+		setOrigin(b->x, 0);
 		break;
 
 
 
 	case Pivot::MidLeft:
 
-		Sprite->setOrigin(0, b->y / 2);
+		setOrigin(0, b->y / 2);
 		break;
 
 	case Pivot::MidCenter:
 
-		Sprite->setOrigin(b->x / 2, b->y / 2);
+		setOrigin(b->x / 2, b->y / 2);
 		break;
 
 	case Pivot::MidRight:
 
-		Sprite->setOrigin(b->x, b->y / 2);
+		setOrigin(b->x, b->y / 2);
 		break;
 
 
 
 	case Pivot::BottomLeft:
 
-		Sprite->setOrigin(0, b->y);
+		setOrigin(0, b->y);
 		break;
 
 	case Pivot::BottomCenter:
 
-		Sprite->setOrigin(b->x / 2, b->y);
+		setOrigin(b->x / 2, b->y);
 		break;
 
 	case Pivot::BottomRight:
 
-		Sprite->setOrigin(b->x, b->y);
+		setOrigin(b->x, b->y);
 		break;
 
 	default:
-		Sprite->setOrigin(0, 0);
+		setOrigin(0, 0);
 		break;
 	}
 }
@@ -90,7 +81,7 @@ void SpriteGameObject::SetPos(float x, float y)
 {
 	currentPos = new Vec2D(x, y);
 
-	Sprite->setPosition(x, y);
+	setPosition(x, y);
 }
 
 void SpriteGameObject::SetPos(Vec2D* pos)
@@ -100,7 +91,7 @@ void SpriteGameObject::SetPos(Vec2D* pos)
 
 void SpriteGameObject::SetScale(float x, float y)
 {
-	Sprite->setScale(x, y);
+	setScale(x, y);
 }
 
 void SpriteGameObject::SetSpeed(float x, float y)
@@ -115,7 +106,7 @@ Vec2D* SpriteGameObject::GetPos()
 
 Vec2D* SpriteGameObject::GetBounds()
 {
-	sf::FloatRect vt = Sprite->getGlobalBounds();
+	sf::FloatRect vt = getGlobalBounds();
 	return new Vec2D(vt.width, vt.height);
 }
 
@@ -131,7 +122,7 @@ void SpriteGameObject::Draw(sf::RenderWindow* win)
 		win->setView(*parentView);
 	}
 
-	win->draw(*Sprite);
+	win->draw(*this);
 }
 
 void SpriteGameObject::SetParentView(BaseView* view)
@@ -146,9 +137,9 @@ BaseView* SpriteGameObject::GetParentView()
 
 void SpriteGameObject::Move()
 {
-	Sprite->move(Speed->x, Speed->y);
+	move(Speed->x, Speed->y);
 
-	sf::Vector2f v = Sprite->getPosition();
+	sf::Vector2f v = getPosition();
 
 	currentPos = new Vec2D(v.x, v.y);
 }
@@ -157,7 +148,7 @@ bool SpriteGameObject::IsOutOfScreen()
 {
 	sf::FloatRect fr = sf::FloatRect(0, 0, Screen::WIDTH, Screen::HEIGHT);
 
-	return !fr.intersects(Sprite->getGlobalBounds());
+	return !fr.intersects(getGlobalBounds());
 }
 
 SpriteGameObject::~SpriteGameObject()

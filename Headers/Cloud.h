@@ -9,7 +9,7 @@ class Cloud : public SpriteGameObject
 
 public:
 
-	Cloud(sf::Texture tex, Pivot piv = Pivot::TopLeft);
+	Cloud(sf::Texture& tex, Pivot piv = Pivot::TopLeft);
 
 	void Update();
 

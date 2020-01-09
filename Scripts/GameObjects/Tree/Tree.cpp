@@ -4,9 +4,9 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 
-Tree::Tree(sf::Texture tex, sf::Texture branchTex, Pivot piv, int branchCount) : SpriteGameObject(tex, piv)
+Tree::Tree(sf::Texture& tex, sf::Texture& branchTex, Pivot piv, int branchCount) : SpriteGameObject(tex, piv)
 {
-	this->branchTex = branchTex;
+	this->branchTex = &branchTex;
 }
 
 void Tree::Update()
@@ -23,7 +23,7 @@ void Tree::AddBranches(int numberOfBranches)
 	for (int i = 0; i < numberOfBranches; i++)
 	{
 		int dir = i % 2 == 0 ? 1 : -1;
-		Branch* br = new Branch(branchTex, dir, Pivot::MidLeft);
+		Branch* br = static_cast<Branch*>(GetParentView()->Instantiate(new Branch(*branchTex, dir, Pivot::MidLeft)));
 
 		br->SetParentView(GetParentView());
 
@@ -44,11 +44,11 @@ void Tree::AddBranches(int numberOfBranches)
 
 void Tree::Draw(sf::RenderWindow* win)
 {
-	win->draw(*Sprite);
+	win->draw(*this);
 
 	for (int i = 0; i < branches.size(); i++)
 	{
-		win->draw(*branches[i].Sprite);
+		win->draw(branches[i]);
 	}
 }
 

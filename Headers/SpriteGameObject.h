@@ -6,7 +6,7 @@
 
 class BaseView;
 
-class SpriteGameObject
+class SpriteGameObject : public sf::Sprite
 {
 private:
 
@@ -22,9 +22,8 @@ public:
 	Vec2D* Speed;
 
 	sf::Texture Tex;
-	sf::Sprite* Sprite;
 
-	SpriteGameObject(sf::Texture tex, Pivot piv = Pivot::TopLeft);
+	SpriteGameObject(sf::Texture& tex, Pivot piv = Pivot::TopLeft);
 
 	void SetPos(float x, float y);
 

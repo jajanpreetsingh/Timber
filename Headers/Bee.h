@@ -9,7 +9,7 @@ private:
 
 public:
 
-	Bee(sf::Texture tex, Pivot piv = Pivot::TopLeft);
+	Bee(sf::Texture& tex, Pivot piv = Pivot::TopLeft);
 
 	void Update();
 

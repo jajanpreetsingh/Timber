@@ -30,7 +30,15 @@ public:
 	
 	void Update(sf::Clock clock);
 
+	void InitBackground();
+
 	void InitText();
+
+	void InitTree();
+
+	void InitClouds();
+
+	void InitSmallBee();
 
 	void InitAnimatedBee();
 };

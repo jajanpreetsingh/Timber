@@ -47,11 +47,11 @@ public:
 
 	void LoadSound(SoundType key, std::string filename);
 
-	static sf::Texture GetTexture(TextureType key);
+	static sf::Texture* GetTexture(TextureType key);
 
-	static sf::Font GetFont(FontType key);
+	static sf::Font* GetFont(FontType key);
 
-	static sf::SoundBuffer GetSoundBuffer(SoundType key);
+	static sf::SoundBuffer* GetSoundBuffer(SoundType key);
 
 	static std::vector<sf::Texture> GetTextures(std::vector<std::string> fileNames, std::string customePathAppend = std::string(""));
 

@@ -3,7 +3,7 @@
 #include "Screen.h"
 #include <SFML/Graphics.hpp>
 
-Branch::Branch(sf::Texture tex, int dir, Pivot piv) : SpriteGameObject(tex, piv)
+Branch::Branch(sf::Texture& tex, int dir, Pivot piv) : SpriteGameObject(tex, piv)
 {
 }
 

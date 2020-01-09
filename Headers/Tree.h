@@ -10,11 +10,11 @@ private:
 
 	std::vector<Branch> branches;
 
-	sf::Texture branchTex;
+	sf::Texture* branchTex;
 
 public:
 
-	Tree(sf::Texture tex, sf::Texture branchTex, Pivot piv = Pivot::TopLeft, int branchCount = 0);
+	Tree(sf::Texture& tex, sf::Texture& branchTex, Pivot piv = Pivot::TopLeft, int branchCount = 0);
 
 	void Update();
 

@@ -16,6 +16,11 @@ void Screen::Draw(sf::Sprite sprite)
 	window->draw(sprite);
 }
 
+Vec2D* Screen::Size()
+{
+	return new Vec2D(WIDTH, HEIGHT);
+}
+
 Vec2D* Screen::TopLeft()
 {
 	return new Vec2D(0, 0);

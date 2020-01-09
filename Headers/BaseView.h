@@ -13,11 +13,15 @@ protected:
 
 	std::vector<SpriteGameObject*> gameObjects;
 
+	std::vector<sf::Drawable*> drawableObjects;
+
 public:
 
 	BaseView(sf::RenderWindow* win, sf::FloatRect* rect);
 
 	virtual void Update(sf::Clock clock);
+
+	virtual void Draw();
 
 	virtual SpriteGameObject* Instantiate(SpriteGameObject* object);
 };

@@ -15,6 +15,8 @@ public:
 
 	void Draw(sf::Sprite sprite);
 
+	static Vec2D* Size();
+
 	static Vec2D* TopLeft();
 
 	static Vec2D* TopCenter();

@@ -10,7 +10,7 @@ public:
 
 	SpriteGameObject* tree;
 
-	Branch(sf::Texture tex, int dir = 1, Pivot piv = Pivot::TopLeft);
+	Branch(sf::Texture& tex, int dir = 1, Pivot piv = Pivot::TopLeft);
 
 	void Update();
 

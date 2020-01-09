@@ -3,11 +3,11 @@
 #include "Screen.h"
 #include <SFML/Graphics.hpp>
 
-Cloud::Cloud(sf::Texture tex, Pivot piv) : SpriteGameObject(tex, piv)
+Cloud::Cloud(sf::Texture& tex, Pivot piv) : SpriteGameObject(tex, piv)
 {
 	IsActive = false;
 
-	Sprite->setColor(sf::Color(255, 255, 255, 128));
+	setColor(sf::Color(255, 255, 255, 128));
 
 	SetScale(-1, 1);
 }
