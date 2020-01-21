@@ -1,15 +1,2 @@
-﻿  AnimatedSpriteObject.cpp
-  Timber.cpp
-C:\Users\jajan\Documents\GitHub\Timber\Timber.cpp(34,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\jajan\Documents\GitHub\Timber\Timber.cpp(38,66): warning C4244: 'argument': conversion from 'const unsigned int' to 'T', possible loss of data
-C:\Users\jajan\Documents\GitHub\Timber\Timber.cpp(38,66): warning C4244:         with
-C:\Users\jajan\Documents\GitHub\Timber\Timber.cpp(38,66): warning C4244:         [
-C:\Users\jajan\Documents\GitHub\Timber\Timber.cpp(38,66): warning C4244:             T=float
-C:\Users\jajan\Documents\GitHub\Timber\Timber.cpp(38,66): warning C4244:         ]
-  Generating Code...
-C:\Users\jajan\Documents\GitHub\Timber\Timber.cpp(38,51): warning C4244: 'argument': conversion from 'const unsigned int' to 'T', possible loss of data
-C:\Users\jajan\Documents\GitHub\Timber\Timber.cpp(38,51): warning C4244:         with
-C:\Users\jajan\Documents\GitHub\Timber\Timber.cpp(38,51): warning C4244:         [
-C:\Users\jajan\Documents\GitHub\Timber\Timber.cpp(38,51): warning C4244:             T=float
-C:\Users\jajan\Documents\GitHub\Timber\Timber.cpp(38,51): warning C4244:         ]
+﻿  Vertices.cpp
   Timber.vcxproj -> C:\Users\jajan\Documents\GitHub\Timber\x64\Debug\Timber.exe

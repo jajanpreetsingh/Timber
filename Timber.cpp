@@ -35,9 +35,9 @@ int main()
 
 	assets = new LoadedAssets();
 
-	FloatRect* rec = new sf::FloatRect(0, 0, screen->WIDTH, screen->HEIGHT);
+	FloatRect* rec = new sf::FloatRect(0, 0, (screen->WIDTH)/8, (screen->HEIGHT)/8);
 
-	level = new JungleView(screen->window, rec);
+	level = new JungleView(screen->window, *rec);
 
 	Clock clock;
 

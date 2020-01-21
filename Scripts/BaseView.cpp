@@ -3,8 +3,11 @@
 #include "BaseView.h"
 #include <SFML/Graphics.hpp>
 
-BaseView::BaseView(sf::RenderWindow* win, sf::FloatRect* rect) : sf::View(*rect)
+BaseView::BaseView(sf::RenderWindow* win, sf::FloatRect& rect) : sf::View(rect)
 {
+	this->reset(rect);
+
+	this->setViewport(sf::FloatRect(0, 0, 0.5, 0.5));
 	window = win;
 }
 

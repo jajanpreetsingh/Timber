@@ -17,7 +17,7 @@ protected:
 
 public:
 
-	BaseView(sf::RenderWindow* win, sf::FloatRect* rect);
+	BaseView(sf::RenderWindow* win, sf::FloatRect& rect);
 
 	virtual void Update(sf::Clock clock);
 

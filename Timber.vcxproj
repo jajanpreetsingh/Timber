@@ -181,16 +181,15 @@
     <ClInclude Include="Headers\Tree.h" />
     <ClInclude Include="Headers\Utils.h" />
     <ClInclude Include="Headers\Vec2D.h" />
+    <ClInclude Include="Headers\Vertices.h" />
     <ClInclude Include="Headers\Word.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="Scene.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="JungleView.cpp" />
-    <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Scripts\CommonStructures\Pivot.cpp" />
     <ClCompile Include="Scripts\CommonStructures\Screen.cpp" />
     <ClCompile Include="Scripts\CommonStructures\Vec2D.cpp" />
+    <ClCompile Include="Scripts\CommonStructures\Vertices.cpp" />
     <ClCompile Include="Scripts\GameObjects\AnimatedSpriteObject.cpp" />
     <ClCompile Include="Scripts\GameObjects\Bee.cpp" />
     <ClCompile Include="Scripts\GameObjects\Cloud.cpp" />
@@ -199,6 +198,7 @@
     <ClCompile Include="Scripts\GameObjects\Tree\Tree.cpp" />
     <ClCompile Include="Scripts\GameObjects\Word.cpp" />
     <ClCompile Include="Scripts\BaseView.cpp" />
+    <ClCompile Include="Scripts\Levels\JungleView.cpp" />
     <ClCompile Include="Scripts\Utils\Constants.cpp" />
     <ClCompile Include="Scripts\Utils\LoadedAssets.cpp" />
     <ClCompile Include="Scripts\Utils\Utils.cpp" />

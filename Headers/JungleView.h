@@ -10,6 +10,7 @@
 #include "Tree.h"
 #include "LoadedAssets.h"
 #include "AnimatedSpriteObject.h"
+#include "Vertices.h"
 
 using namespace sf;
 
@@ -23,10 +24,11 @@ public:
 	Cloud** c;
 	Text* score = NULL;
 	Font komika;
+	Vertices* bgvert;
 
 	AnimatedSpriteObject* combee = NULL;
 
-	JungleView(sf::RenderWindow* win, sf::FloatRect* rect); 
+	JungleView(sf::RenderWindow* win, sf::FloatRect& rect); 
 	
 	void Update(sf::Clock clock);
 
