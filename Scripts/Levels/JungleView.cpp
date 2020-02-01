@@ -35,7 +35,7 @@ void JungleView::Update(Clock clock)
 
 void JungleView::InitBackground()
 {
-	bgvert = new Vertices(1, 4);
+	bgvert = new Vertices(1, 4, Quads);
 
 	bgvert->SetBounds(0, 0, 2598, 1457);
 
@@ -58,7 +58,7 @@ void JungleView::InitBackground()
 	//bg->SetScale(Screen::WIDTH / b->x, Screen::HEIGHT / b->y);
 
 	//bg->SetPos(Screen::MidCenter());
-	
+
 }
 
 void JungleView::InitTree()

@@ -2,20 +2,19 @@
 
 #include "Vertices.h"
 
-Vertices::Vertices(int noOfElements, int prim)
+Vertices::Vertices(int noOfElements, int vertPerElement, sf::PrimitiveType prim)
 {
 	xpos = 0;
 	ypos = 0;
-	w = 0;
-	h = 0;
+	width = 0;
+	height = 0;
 
 	primitive = prim;
+	vertPerElement = vertPerElement;
 
-	size = noOfElements * primitive;
+	size = noOfElements * vertPerElement;
 
-	points = new sf::VertexArray(sf::Quads, size);
-
-	points->resize(size);
+	points = new sf::VertexArray(primitive, size);
 }
 
 sf::Vertex& Vertices::operator[](int index)
@@ -32,13 +31,13 @@ void Vertices::ShiftTexture(float x, float y, MotionType motion)
 
 		if (motion == MotionType::Circular)
 		{
-			if (newX > w + xpos)
+			if (newX > width + xpos)
 			{
 				newX = xpos + x;
 			}
 			else if (newX < xpos)
 			{
-				newX = xpos + w - x;
+				newX = xpos + width - x;
 			}
 		}
 
@@ -50,6 +49,6 @@ void Vertices::SetBounds(float posx, float posy, float width, float height)
 {
 	xpos = posx;
 	ypos = posy;
-	w = width;
-	h = height;
+	this->width = width;
+	this->height = height;
 }

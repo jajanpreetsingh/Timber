@@ -3,25 +3,27 @@
 #include <SFML/Graphics.hpp>
 #include <Vec2D.h>
 
+enum class MotionType
+{
+	Circular,
+};
+
 class Vertices
 {
 private:
-	int primitive;
+	sf::PrimitiveType primitive;
+
+	int verticesPerElement;
 
 	int size;
 
-	float xpos, ypos, w, h;
+	float xpos, ypos, width, height;
 
 public:
 
-	enum MotionType
-	{
-		Circular,
-	};
-
 	sf::VertexArray* points;
 
-	Vertices(int noOfElements, int prim);
+	Vertices(int noOfElements, int vertPerElement, sf::PrimitiveType prim);
 
 	sf::Vertex &operator[](int index);
 
