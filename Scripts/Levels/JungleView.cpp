@@ -22,11 +22,11 @@ void JungleView::Update(Clock clock)
 
 	Time dt = clock.restart();
 
-	bgvert->ShiftTexture(2, 0);
+	//bgvert->ShiftTexture(2, 0);
 
 	window->clear();
 
-	window->draw(*bgvert->points, LoadedAssets::GetTexture(TextureType::All));
+	//window->draw(*bgvert->points, LoadedAssets::GetTexture(TextureType::All));
 
 	Draw();
 
@@ -35,29 +35,29 @@ void JungleView::Update(Clock clock)
 
 void JungleView::InitBackground()
 {
-	bgvert = new Vertices(1, 4, Quads);
+	//bgvert = new Vertices(1, 4, Quads);
 
-	bgvert->SetBounds(0, 0, 2598, 1457);
+	//bgvert->SetBounds(0, 0, 2598, 1457);
 
-	(*bgvert->points)[0].position = *static_cast<Vector2f*>(Screen::TopLeft());
-	(*bgvert->points)[1].position = *static_cast<Vector2f*>(Screen::TopRight());
-	(*bgvert->points)[2].position = *static_cast<Vector2f*>(Screen::BottomRight());
-	(*bgvert->points)[3].position = *static_cast<Vector2f*>(Screen::BottomLeft());
+	//(*bgvert->points)[0].position = *static_cast<Vector2f*>(Screen::TopLeft());
+	//(*bgvert->points)[1].position = *static_cast<Vector2f*>(Screen::TopRight());
+	//(*bgvert->points)[2].position = *static_cast<Vector2f*>(Screen::BottomRight());
+	//(*bgvert->points)[3].position = *static_cast<Vector2f*>(Screen::BottomLeft());
 
-	//2598; 2974; 928; 577
+	////2598; 2974; 928; 577
 
-	(*bgvert->points)[0].texCoords = *new sf::Vector2f(0, 0);
-	(*bgvert->points)[1].texCoords = *new sf::Vector2f(0 + 2598, 0);
-	(*bgvert->points)[2].texCoords = *new sf::Vector2f(0 + 2598, 0 + 1457);
-	(*bgvert->points)[3].texCoords = *new sf::Vector2f(0, 0 + 1457);
+	//(*bgvert->points)[0].texCoords = *new sf::Vector2f(0, 0);
+	//(*bgvert->points)[1].texCoords = *new sf::Vector2f(0 + 2598, 0);
+	//(*bgvert->points)[2].texCoords = *new sf::Vector2f(0 + 2598, 0 + 1457);
+	//(*bgvert->points)[3].texCoords = *new sf::Vector2f(0, 0 + 1457);
 
-	//bg = Instantiate(new SpriteGameObject(*LoadedAssets::GetTexture(TextureType::Background), Pivot::MidCenter));
+	bg = Instantiate(new SpriteGameObject(*LoadedAssets::GetTexture(TextureType::Background), Pivot::MidCenter));
 
-	//Vec2D* b = bg->GetBounds();
+	Vec2D* b = bg->GetBounds();
 
-	//bg->SetScale(Screen::WIDTH / b->x, Screen::HEIGHT / b->y);
+	bg->SetScale(Screen::WIDTH / b->x, Screen::HEIGHT / b->y);
 
-	//bg->SetPos(Screen::MidCenter());
+	bg->SetPos(Screen::MidCenter());
 
 }
 

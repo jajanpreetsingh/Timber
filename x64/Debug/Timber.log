@@ -1,16 +1,2 @@
 ﻿  JungleView.cpp
-  Timber.cpp
-C:\Users\jajan\Documents\GitHub\Timber\Timber.cpp(34,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\jajan\Documents\GitHub\Timber\Timber.cpp(38,78): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
-C:\Users\jajan\Documents\GitHub\Timber\Timber.cpp(38,78): warning C4244:         with
-C:\Users\jajan\Documents\GitHub\Timber\Timber.cpp(38,78): warning C4244:         [
-C:\Users\jajan\Documents\GitHub\Timber\Timber.cpp(38,78): warning C4244:             T=float
-C:\Users\jajan\Documents\GitHub\Timber\Timber.cpp(38,78): warning C4244:         ]
-  Generating Code...
-C:\Users\jajan\Documents\GitHub\Timber\Timber.cpp(38,58): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
-C:\Users\jajan\Documents\GitHub\Timber\Timber.cpp(38,58): warning C4244:         with
-C:\Users\jajan\Documents\GitHub\Timber\Timber.cpp(38,58): warning C4244:         [
-C:\Users\jajan\Documents\GitHub\Timber\Timber.cpp(38,58): warning C4244:             T=float
-C:\Users\jajan\Documents\GitHub\Timber\Timber.cpp(38,58): warning C4244:         ]
-  LINK : C:\Users\jajan\Documents\GitHub\Timber\x64\Debug\Timber.exe not found or not built by the last incremental link; performing full link
   Timber.vcxproj -> C:\Users\jajan\Documents\GitHub\Timber\x64\Debug\Timber.exe
