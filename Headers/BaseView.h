@@ -19,7 +19,7 @@ public:
 
 	BaseView(sf::RenderWindow* win, sf::FloatRect& rect);
 
-	virtual void Update(sf::Clock clock);
+	virtual void Update(float dtInSeconds);
 
 	virtual void Draw();
 

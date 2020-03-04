@@ -30,7 +30,7 @@ public:
 
 	JungleView(sf::RenderWindow* win, sf::FloatRect& rect); 
 	
-	void Update(sf::Clock clock);
+	void Update(float dtInSeconds);
 
 	void InitBackground();
 

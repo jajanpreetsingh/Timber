@@ -29,7 +29,7 @@ enum class SoundType
 class LoadedAssets
 {
 private:
-
+	
 	static std::map<TextureType, sf::Texture> Textures;
 
 	static std::map<FontType, sf::Font> Fonts;
@@ -37,6 +37,8 @@ private:
 	static std::map<SoundType, sf::SoundBuffer> Sounds;
 
 public:
+
+	static LoadedAssets* Instance;
 
 	LoadedAssets();
 

@@ -37,8 +37,6 @@ public:
 
 	void SetSpeed(float x, float y);
 
-	static sf::Texture GetTexture(std::string filename);
-
 	Vec2D* GetPos();
 
 	Vec2D* GetBounds();

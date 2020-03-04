@@ -172,10 +172,12 @@
     <ClInclude Include="Headers\Branch.h" />
     <ClInclude Include="Headers\Cloud.h" />
     <ClInclude Include="Headers\Constants.h" />
+    <ClInclude Include="Headers\Engine.h" />
     <ClInclude Include="Headers\JungleView.h" />
     <ClInclude Include="Headers\BaseView.h" />
     <ClInclude Include="Headers\LoadedAssets.h" />
     <ClInclude Include="Headers\Pivot.h" />
+    <ClInclude Include="Headers\resource.h" />
     <ClInclude Include="Headers\Screen.h" />
     <ClInclude Include="Headers\SpriteGameObject.h" />
     <ClInclude Include="Headers\Tree.h" />
@@ -183,13 +185,13 @@
     <ClInclude Include="Headers\Vec2D.h" />
     <ClInclude Include="Headers\Vertices.h" />
     <ClInclude Include="Headers\Word.h" />
-    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Scripts\CommonStructures\Pivot.cpp" />
     <ClCompile Include="Scripts\CommonStructures\Screen.cpp" />
     <ClCompile Include="Scripts\CommonStructures\Vec2D.cpp" />
     <ClCompile Include="Scripts\CommonStructures\Vertices.cpp" />
+    <ClCompile Include="Scripts\Engine.cpp" />
     <ClCompile Include="Scripts\GameObjects\AnimatedSpriteObject.cpp" />
     <ClCompile Include="Scripts\GameObjects\Bee.cpp" />
     <ClCompile Include="Scripts\GameObjects\Cloud.cpp" />

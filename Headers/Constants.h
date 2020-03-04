@@ -4,9 +4,11 @@
 class Constants
 {
 public:
-	static std::string SpritePath;
+	static std::string PATH_SPRITE;
+	static std::string PATH_AUDIO;
+	static std::string PATH_FONT;
+	static std::string PATH_SHADER;
+	static std::string PATH_LEVEL;
 
-	static std::string AudioPath;
-
-	static std::string FontPath;
+	static int PHYSICS_GRAVITY;
 };

@@ -16,11 +16,9 @@ JungleView::JungleView(sf::RenderWindow* win, sf::FloatRect& rect) : BaseView(wi
 	InitText();
 }
 
-void JungleView::Update(Clock clock)
+void JungleView::Update(float dtInSeconds)
 {
-	BaseView::Update(clock);
-
-	Time dt = clock.restart();
+	BaseView::Update(dtInSeconds);
 
 	//bgvert->ShiftTexture(2, 0);
 
@@ -35,21 +33,25 @@ void JungleView::Update(Clock clock)
 
 void JungleView::InitBackground()
 {
-	//bgvert = new Vertices(1, 4, Quads);
+	/* By vertex array 
 
-	//bgvert->SetBounds(0, 0, 2598, 1457);
+	bgvert = new Vertices(1, 4, Quads);
 
-	//(*bgvert->points)[0].position = *static_cast<Vector2f*>(Screen::TopLeft());
-	//(*bgvert->points)[1].position = *static_cast<Vector2f*>(Screen::TopRight());
-	//(*bgvert->points)[2].position = *static_cast<Vector2f*>(Screen::BottomRight());
-	//(*bgvert->points)[3].position = *static_cast<Vector2f*>(Screen::BottomLeft());
+	bgvert->SetBounds(0, 0, 2598, 1457);
 
-	////2598; 2974; 928; 577
+	(*bgvert->points)[0].position = *static_cast<Vector2f*>(Screen::TopLeft());
+	(*bgvert->points)[1].position = *static_cast<Vector2f*>(Screen::TopRight());
+	(*bgvert->points)[2].position = *static_cast<Vector2f*>(Screen::BottomRight());
+	(*bgvert->points)[3].position = *static_cast<Vector2f*>(Screen::BottomLeft());
 
-	//(*bgvert->points)[0].texCoords = *new sf::Vector2f(0, 0);
-	//(*bgvert->points)[1].texCoords = *new sf::Vector2f(0 + 2598, 0);
-	//(*bgvert->points)[2].texCoords = *new sf::Vector2f(0 + 2598, 0 + 1457);
-	//(*bgvert->points)[3].texCoords = *new sf::Vector2f(0, 0 + 1457);
+	//2598; 2974; 928; 577
+
+	(*bgvert->points)[0].texCoords = *new sf::Vector2f(0, 0);
+	(*bgvert->points)[1].texCoords = *new sf::Vector2f(0 + 2598, 0);
+	(*bgvert->points)[2].texCoords = *new sf::Vector2f(0 + 2598, 0 + 1457);
+	(*bgvert->points)[3].texCoords = *new sf::Vector2f(0, 0 + 1457);
+
+	*/
 
 	bg = Instantiate(new SpriteGameObject(*LoadedAssets::GetTexture(TextureType::Background), Pivot::MidCenter));
 

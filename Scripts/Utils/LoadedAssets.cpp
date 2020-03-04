@@ -24,7 +24,7 @@ void LoadedAssets::Init()
 void LoadedAssets::LoadFont(FontType key, std::string filename)
 {
 	sf::Font f;
-	if (f.loadFromFile(Constants::FontPath + filename))
+	if (f.loadFromFile(Constants::PATH_FONT + filename))
 	{
 		Fonts[key] = f;
 	}
@@ -33,7 +33,7 @@ void LoadedAssets::LoadFont(FontType key, std::string filename)
 void LoadedAssets::LoadTexture(TextureType key, std::string filename)
 {
 	sf::Texture t;
-	t.loadFromFile(Constants::SpritePath + filename);
+	t.loadFromFile(Constants::PATH_SPRITE + filename);
 
 	Textures[key] = t;
 }
@@ -41,7 +41,7 @@ void LoadedAssets::LoadTexture(TextureType key, std::string filename)
 void LoadedAssets::LoadSound(SoundType key, std::string filename)
 {
 	sf::SoundBuffer s;
-	s.loadFromFile(Constants::AudioPath + filename);
+	s.loadFromFile(Constants::PATH_AUDIO + filename);
 
 	Sounds[key] = s;
 }
@@ -68,7 +68,7 @@ std::vector<sf::Texture> LoadedAssets::GetTextures(std::vector < std::string> fi
 	for (int i = 0; i < fileNames.size(); i++)
 	{
 		sf::Texture t;
-		t.loadFromFile(Constants::SpritePath + customePathAppend + fileNames[i]);
+		t.loadFromFile(Constants::PATH_SPRITE + customePathAppend + fileNames[i]);
 		texs.push_back(t);
 	}
 

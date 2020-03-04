@@ -11,10 +11,8 @@ BaseView::BaseView(sf::RenderWindow* win, sf::FloatRect& rect) : sf::View(rect)
 	window = win;
 }
 
-void BaseView::Update(sf::Clock clock)
+void BaseView::Update(float dtInSeconds)
 {
-	sf::Time dt = clock.restart();
-
 	if (gameObjects.empty())
 	{
 		return;
