@@ -19,6 +19,7 @@ void LoadedAssets::Init()
 	LoadFont(FontType::Komika, "KOMIKAP_.ttf");
 
 	LoadSound(SoundType::Chop, "chop.wav");
+	LoadSound(SoundType::Bee, "bee.wav");
 }
 
 void LoadedAssets::LoadFont(FontType key, std::string filename)

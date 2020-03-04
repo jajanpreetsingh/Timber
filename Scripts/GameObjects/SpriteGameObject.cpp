@@ -1,8 +1,8 @@
 #pragma once
 
-#include "SpriteGameObject.h"
+#include <SpriteGameObject.h>
 #include <SFML/Graphics.hpp>
-#include "Screen.h"
+#include <Screen.h>
 
 SpriteGameObject::SpriteGameObject(sf::Texture& tex, Pivot piv) : Sprite(tex)
 {
@@ -10,7 +10,7 @@ SpriteGameObject::SpriteGameObject(sf::Texture& tex, Pivot piv) : Sprite(tex)
 
 	Tex = tex;
 	//Sprite = new sf::Sprite(Tex);
-	IsActive = false;
+	IsActive = true;
 	Speed = new Vec2D(0, 0);
 
 	SetPos(0, 0);
@@ -117,6 +117,11 @@ void SpriteGameObject::Update()
 
 void SpriteGameObject::Draw(sf::RenderWindow* win)
 {
+	if (!IsActive)
+	{
+		return;
+	}
+
 	if (parentView != nullptr)
 	{
 		win->setView(*parentView);

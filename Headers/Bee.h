@@ -1,4 +1,4 @@
-#include "SpriteGameObject.h"
+#include <SpriteGameObject.h>
 
 #pragma once
 class Bee : public SpriteGameObject

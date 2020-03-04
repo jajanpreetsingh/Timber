@@ -1,7 +1,10 @@
-#include "Bee.h"
-#include "Utils.h"
-#include "Screen.h"
+#pragma once
+
 #include <SFML/Graphics.hpp>
+#include <Bee.h>
+#include <Utils.h>
+#include <Screen.h>
+#include <SFML/Audio/Listener.hpp>
 
 Bee::Bee(sf::Texture& tex, Pivot piv) : SpriteGameObject(tex, piv)
 {
@@ -19,6 +22,8 @@ void Bee::Update()
 	}
 	else
 	{
+		sf::Listener::setPosition(GetPos()->x, GetPos()->y, 0);
+
 		int nextXSpeed = Utils::GetRandom(-8, 4); // more tendency to go left
 		int nextYSpeed = Utils::GetRandom(-4, 8); // more tendency to come down
 

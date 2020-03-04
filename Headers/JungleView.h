@@ -25,6 +25,7 @@ public:
 	Text* score = NULL;
 	Font komika;
 	Vertices* bgvert;
+	Sound beeSound;
 
 	AnimatedSpriteObject* combee = NULL;
 

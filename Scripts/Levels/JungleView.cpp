@@ -1,7 +1,7 @@
 #pragma once
 
-#include "JungleView.h"
-#include "Screen.h"
+#include <JungleView.h>
+#include <Screen.h>
 
 JungleView::JungleView(sf::RenderWindow* win, sf::FloatRect& rect) : BaseView(win, rect)
 {
@@ -22,7 +22,7 @@ void JungleView::Update(float dtInSeconds)
 
 	//bgvert->ShiftTexture(2, 0);
 
-	window->clear();
+	window->clear();// can take a color default is black
 
 	//window->draw(*bgvert->points, LoadedAssets::GetTexture(TextureType::All));
 
@@ -121,12 +121,18 @@ void JungleView::InitAnimatedBee()
 		fileNames.push_back(name);
 	}
 
-	Sound s;
-	s.setBuffer(*LoadedAssets::GetSoundBuffer(SoundType::Chop));
-
-	s.play();
-
 	combee = static_cast<AnimatedSpriteObject*>(Instantiate(new AnimatedSpriteObject(LoadedAssets::GetTextures(fileNames), Pivot::MidCenter)));
 	combee->SetPos(Screen::MidCenter());
 	combee->ChangeAnimationSpeed(30);
+
+	//SEE CODE IN Bee.cpp to how sound spatialization works
+
+	beeSound.setBuffer(*LoadedAssets::GetSoundBuffer(SoundType::Bee));
+	beeSound.setVolume(100);
+	beeSound.setLoop(true);
+	beeSound.setMinDistance(100);
+	beeSound.setAttenuation(10);
+	beeSound.setPosition(combee->GetPos()->x, combee->GetPos()->y, 0);
+
+	beeSound.play();
 }

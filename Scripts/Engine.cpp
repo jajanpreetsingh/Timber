@@ -37,6 +37,8 @@ Engine::Engine()
 {
 	gamePaused = false;
 
+	totalGameTimeInSec = 0;
+
 	screen = new Screen();
 
 	assets = new LoadedAssets();
