@@ -12,7 +12,7 @@ Cloud::Cloud(sf::Texture& tex, Pivot piv) : SpriteGameObject(tex, piv)
 	SetScale(-1, 1);
 }
 
-void Cloud::Update()
+void Cloud::Update(float dtInSeconds)
 {
 	if (!IsActive)
 	{

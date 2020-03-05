@@ -176,11 +176,13 @@
     <ClInclude Include="Headers\JungleView.h" />
     <ClInclude Include="Headers\BaseView.h" />
     <ClInclude Include="Headers\LoadedAssets.h" />
+    <ClInclude Include="Headers\Particle.h" />
     <ClInclude Include="Headers\Pivot.h" />
     <ClInclude Include="Headers\resource.h" />
     <ClInclude Include="Headers\Screen.h" />
     <ClInclude Include="Headers\SpriteGameObject.h" />
     <ClInclude Include="Headers\Tree.h" />
+    <ClInclude Include="Headers\Updatable.h" />
     <ClInclude Include="Headers\Utils.h" />
     <ClInclude Include="Headers\Vec2D.h" />
     <ClInclude Include="Headers\Vertices.h" />
@@ -195,6 +197,7 @@
     <ClCompile Include="Scripts\GameObjects\AnimatedSpriteObject.cpp" />
     <ClCompile Include="Scripts\GameObjects\Bee.cpp" />
     <ClCompile Include="Scripts\GameObjects\Cloud.cpp" />
+    <ClCompile Include="Scripts\GameObjects\Particle.cpp" />
     <ClCompile Include="Scripts\GameObjects\SpriteGameObject.cpp" />
     <ClCompile Include="Scripts\GameObjects\Tree\Branch.cpp" />
     <ClCompile Include="Scripts\GameObjects\Tree\Tree.cpp" />

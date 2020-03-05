@@ -31,5 +31,7 @@ public:
 	Engine();
 
 	void Run();
+
+	float GetTotalTime() const;
 };
 

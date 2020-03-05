@@ -1,12 +1,13 @@
 #pragma once
 
-#include "Vec2D.h"
-#include "Pivot.h"
-#include "BaseView.h"
+#include <Vec2D.h>
+#include <Pivot.h>
+#include <BaseView.h>
+#include <Updatable.h>
 
 class BaseView;
 
-class SpriteGameObject : public sf::Sprite
+class SpriteGameObject : public sf::Sprite, public Updatable
 {
 private:
 
@@ -41,7 +42,7 @@ public:
 
 	Vec2D* GetBounds();
 
-	virtual void Update();
+	virtual void Update(float dtInSeconds);
 
 	virtual void Move();
 

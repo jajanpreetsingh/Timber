@@ -20,7 +20,7 @@ void BaseView::Update(float dtInSeconds)
 
 	for (int i = 0; i < gameObjects.size(); i++)
 	{
-		gameObjects[i]->Update();
+		gameObjects[i]->Update(dtInSeconds);
 	}
 }
 

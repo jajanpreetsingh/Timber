@@ -11,7 +11,7 @@ Bee::Bee(sf::Texture& tex, Pivot piv) : SpriteGameObject(tex, piv)
 	IsActive = false;
 }
 
-void Bee::Update()
+void Bee::Update(float dtInSeconds)
 {
 	if (!IsActive)
 	{

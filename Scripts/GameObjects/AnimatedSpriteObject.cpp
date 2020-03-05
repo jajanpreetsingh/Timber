@@ -17,7 +17,7 @@ AnimatedSpriteObject::AnimatedSpriteObject(std::vector<sf::Texture> texArray, Pi
 	clock.restart();
 }
 
-void AnimatedSpriteObject::Update()
+void AnimatedSpriteObject::Update(float dtInSeconds)
 {
 	if (spriteChangedTimeElapsed >= (1 / animationScale))
 	{

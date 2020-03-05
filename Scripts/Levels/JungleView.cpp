@@ -14,17 +14,20 @@ JungleView::JungleView(sf::RenderWindow* win, sf::FloatRect& rect) : BaseView(wi
 	InitClouds();
 
 	InitText();
+
+	bgShader.loadFromFile("Resources/shaders/vertShader.vert", "Resources/shaders/rippleShader.frag");
 }
 
 void JungleView::Update(float dtInSeconds)
 {
 	BaseView::Update(dtInSeconds);
-
 	//bgvert->ShiftTexture(2, 0);
 
 	window->clear();// can take a color default is black
 
 	//window->draw(*bgvert->points, LoadedAssets::GetTexture(TextureType::All));
+
+	window->draw(*bg, &bgShader);
 
 	Draw();
 
@@ -33,7 +36,7 @@ void JungleView::Update(float dtInSeconds)
 
 void JungleView::InitBackground()
 {
-	/* By vertex array 
+	/* By vertex array
 
 	bgvert = new Vertices(1, 4, Quads);
 
@@ -53,7 +56,7 @@ void JungleView::InitBackground()
 
 	*/
 
-	bg = Instantiate(new SpriteGameObject(*LoadedAssets::GetTexture(TextureType::Background), Pivot::MidCenter));
+	bg = new SpriteGameObject(*LoadedAssets::GetTexture(TextureType::Background), Pivot::MidCenter);
 
 	Vec2D* b = bg->GetBounds();
 
@@ -130,8 +133,8 @@ void JungleView::InitAnimatedBee()
 	beeSound.setBuffer(*LoadedAssets::GetSoundBuffer(SoundType::Bee));
 	beeSound.setVolume(100);
 	beeSound.setLoop(true);
-	beeSound.setMinDistance(100);
-	beeSound.setAttenuation(10);
+	beeSound.setMinDistance(15);
+	beeSound.setAttenuation(20);
 	beeSound.setPosition(combee->GetPos()->x, combee->GetPos()->y, 0);
 
 	beeSound.play();

@@ -1,2 +1,13 @@
-﻿  JungleView.cpp
+﻿  Engine.cpp
+C:\Users\jajan\Desktop\Timber\Scripts\Engine.cpp(48,85): warning C4244:  'argument': conversion from 'unsigned int' to 'T', possible loss of data
+C:\Users\jajan\Desktop\Timber\Scripts\Engine.cpp(48,85): warning C4244:         with
+C:\Users\jajan\Desktop\Timber\Scripts\Engine.cpp(48,85): warning C4244:         [
+C:\Users\jajan\Desktop\Timber\Scripts\Engine.cpp(48,85): warning C4244:             T=float
+C:\Users\jajan\Desktop\Timber\Scripts\Engine.cpp(48,85): warning C4244:         ]
+C:\Users\jajan\Desktop\Timber\Scripts\Engine.cpp(48,63): warning C4244:  'argument': conversion from 'unsigned int' to 'T', possible loss of data
+C:\Users\jajan\Desktop\Timber\Scripts\Engine.cpp(48,63): warning C4244:         with
+C:\Users\jajan\Desktop\Timber\Scripts\Engine.cpp(48,63): warning C4244:         [
+C:\Users\jajan\Desktop\Timber\Scripts\Engine.cpp(48,63): warning C4244:             T=float
+C:\Users\jajan\Desktop\Timber\Scripts\Engine.cpp(48,63): warning C4244:         ]
+C:\Users\jajan\Desktop\Timber\Scripts\Engine.cpp(55,12): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Timber.vcxproj -> C:\Users\jajan\Desktop\Timber\x64\Debug\Timber.exe

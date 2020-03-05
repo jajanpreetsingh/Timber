@@ -20,6 +20,8 @@ void LoadedAssets::Init()
 
 	LoadSound(SoundType::Chop, "chop.wav");
 	LoadSound(SoundType::Bee, "bee.wav");
+
+	//LoadShader(ShaderType::Ripple, "vertShader.vert", "rippleShader.frag");
 }
 
 void LoadedAssets::LoadFont(FontType key, std::string filename)
@@ -47,6 +49,14 @@ void LoadedAssets::LoadSound(SoundType key, std::string filename)
 	Sounds[key] = s;
 }
 
+//void LoadedAssets::LoadShader(ShaderType key, std::string vertFilename, std::string fragFilename)
+//{
+//	sf::Shader s;
+//	s.loadFromFile(vertFilename, fragFilename);
+//
+//	Shaders[key] = &s;
+//}
+
 sf::Texture* LoadedAssets::GetTexture(TextureType key)
 {
 	return &Textures[key];
@@ -61,6 +71,11 @@ sf::SoundBuffer* LoadedAssets::GetSoundBuffer(SoundType key)
 {
 	return &Sounds[key];
 }
+
+//sf::Shader* LoadedAssets::GetShader(ShaderType key)
+//{
+//	return Shaders[key];
+//}
 
 std::vector<sf::Texture> LoadedAssets::GetTextures(std::vector < std::string> fileNames, std::string customePathAppend)
 {

@@ -29,7 +29,7 @@ public:
 
 	AnimatedSpriteObject(std::vector<sf::Texture> texArray, Pivot piv = Pivot::TopLeft);
 
-	void Update();
+	void Update(float dtInSeconds);
 
 	void ChangeState(std::string stateName);
 

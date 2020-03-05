@@ -18,6 +18,8 @@ void Engine::Update(sf::Clock clock)
 {
 	float dtInSeconds = clock.restart().asSeconds();
 
+	level->bgShader.setUniform("uTime", GetTotalTime());
+
 	ProcessInput();
 
 	if (gamePaused)
@@ -58,6 +60,11 @@ void Engine::Run()
 	{
 		Update(clock);
 	}
+}
+
+float Engine::GetTotalTime() const
+{
+	return totalGameTimeInSec;
 }
 
 

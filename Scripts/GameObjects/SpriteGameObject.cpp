@@ -9,7 +9,6 @@ SpriteGameObject::SpriteGameObject(sf::Texture& tex, Pivot piv) : Sprite(tex)
 	currentPos = new Vec2D(0, 0);
 
 	Tex = tex;
-	//Sprite = new sf::Sprite(Tex);
 	IsActive = true;
 	Speed = new Vec2D(0, 0);
 
@@ -110,7 +109,7 @@ Vec2D* SpriteGameObject::GetBounds()
 	return new Vec2D(vt.width, vt.height);
 }
 
-void SpriteGameObject::Update()
+void SpriteGameObject::Update(float dtInSeconds)
 {
 
 }

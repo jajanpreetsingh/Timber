@@ -26,6 +26,7 @@ public:
 	Font komika;
 	Vertices* bgvert;
 	Sound beeSound;
+	Shader bgShader;
 
 	AnimatedSpriteObject* combee = NULL;
 

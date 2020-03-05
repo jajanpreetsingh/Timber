@@ -27,6 +27,13 @@ enum class SoundType
 	Bee
 };
 
+enum ShaderType
+{
+	Ripple,
+	Ripple_Vert,
+	Ripple_Frag
+};
+
 class LoadedAssets
 {
 private:
@@ -36,6 +43,8 @@ private:
 	static std::map<FontType, sf::Font> Fonts;
 
 	static std::map<SoundType, sf::SoundBuffer> Sounds;
+
+	//static std::map<ShaderType, sf::Shader*> Shaders;
 
 public:
 
@@ -51,11 +60,15 @@ public:
 
 	void LoadSound(SoundType key, std::string filename);
 
+	//void LoadShader(ShaderType key, std::string vertFilename, std::string fragFilename);
+
 	static sf::Texture* GetTexture(TextureType key);
 
 	static sf::Font* GetFont(FontType key);
 
 	static sf::SoundBuffer* GetSoundBuffer(SoundType key);
+
+	//static sf::Shader* GetShader(ShaderType key);
 
 	static std::vector<sf::Texture> GetTextures(std::vector<std::string> fileNames, std::string customePathAppend = std::string(""));
 
